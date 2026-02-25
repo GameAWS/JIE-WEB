@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="intro">
+    <h2 style="margin-bottom: 2rem; color: #2c3e50;">💼 Professional Experience</h2>
+
+    <div class="experience-list">
+
+        <div class="resume-card">
+            <h3>Technical Artist | NetEase Games</h3>
+            <p class="date">Dec 2025 - Present</p>
+            <ul>
+                <li>Developing game video AI agents and providing rendering technical support for high-quality FPS projects.</li>
+                <li>Optimizing realistic character and scene materials, as well as complex shaders to enhance visual fidelity.</li>
+            </ul>
+        </div>
+
+        <div class="resume-card">
+            <h3>R&D Project Manager (PPM) & TA | Tencent</h3>
+            <p class="date">Jun 2025 - Present | Project: DreamStar (元梦之星) - Open World</p>
+            <ul>
+                <li><strong>Quality Assurance & Pipeline Control:</strong> Established client-side module testing standards and designed test cases for core gameplay mechanics, including open-world scene loading, pet combat synchronization, and resource gathering.</li>
+                <li><strong>Technical Art Problem Solving:</strong> Collaborated with Art and TA teams to resolve complex visual bugs, such as VFX/material rendering anomalies and terrain material clipping.</li>
+                <li><strong>Cross-functional Coordination:</strong> Facilitated weekly synchronization meetings across various client modules (Engine, Combat, Build, PVP) to align R&D progress and mitigate development risks.</li>
+                <li><strong>Defect Management:</strong> Built a comprehensive defect database, categorizing bugs by modules (Rendering/Physics/AI) and generating visual reports to drive priority fixes.</li>
+            </ul>
+        </div>
+
+        <div class="resume-card">
+            <h3>Art Project Manager (APM) | Papergames (叠纸游戏)</h3>
+            <p class="date">Mar 2025 - Jun 2025 | Project: Infinity Nikki (无限暖暖)</p>
+            <ul>
+                <li>Managed the art production pipeline for the 5th generation multi-platform (PC, Mobile, PS5) open-world title of the Nikki series.</li>
+                <li>Bridged communication between art, programming, and design departments to ensure seamless asset delivery and integration.</li>
+            </ul>
+        </div>
+
+        <div class="resume-card">
+            <h3>Marketing & Publishing Project Manager | Lilith Games (莉莉丝游戏)</h3>
+            <p class="date">Oct 2024 - Mar 2025 | Shanghai, China</p>
+            <ul>
+                <li><strong>Marketing Strategy & Brand Consistency:</strong> Spearheaded the overall marketing strategies for all game products in the China region, ensuring a unified and efficient transmission of brand identity across diverse channels.</li>
+                <li><strong>Asset Pipeline Management:</strong> Managed the end-to-end planning and production of promotional assets (including high-quality videos and graphic designs), meeting the tailored needs of various platforms.</li>
+                <li><strong>Cross-functional Collaboration:</strong> Partnered closely with development teams to ensure high consistency between promotional materials and actual game content, significantly enhancing user experience.</li>
+                <li><strong>Data-Driven Optimization:</strong> Monitored publishing workflows and utilized market data analysis to dynamically adjust marketing strategies, boosting market competitiveness.</li>
+                <li><strong>Project Execution & Resource Coordination:</strong> Coordinated cross-departmental resources to efficiently drive the execution of publishing projects, ensuring on-time delivery of high-quality assets.</li>
+                <li><strong>Performance Evaluation:</strong> Regularly assessed promotional effectiveness and gathered market feedback to provide crucial decision support for product optimization and future campaigns.</li>
+                <li><strong>Team Management & Training:</strong> Managed and trained the publishing team, enhancing professional skills and fostering a highly efficient, collaborative work environment.</li>
+            </ul>
+        </div>
+    </div>
+
+    <h2 style="margin-top: 3.5rem; margin-bottom: 2rem; color: #2c3e50;">💻 Selected Portfolio & Projects</h2>
+
+    <div class="project-grid">
+        <div class="project-card">
+            <img src="{{ url_for('static', filename='akls.jpg') }}" alt="Lost Ruins Akrosa" class="project-image">
+            <div class="project-content">
+                <h3>3D Environment: Lost Ruins - Akrosa</h3>
+                <p class="role">Role: 3D Environment Artist</p>
+                <p class="desc">Created high-quality 3D assets and UE5 scene lighting. Managed full PBR workflows from modeling to texturing.</p>
+                <div class="tech-stack">
+                    <span>UE5</span> <span>Blender</span> <span>Substance Painter</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <img src="{{ url_for('static', filename='shader1.jpg') }}" alt="Toon Shader" class="project-image">
+            <div class="project-content">
+                <h3>Tech Art: URP Toon Shader</h3>
+                <p class="role">Role: Technical Artist</p>
+                <p class="desc">Developed custom URP Toon Shaders in Unity for stylized character rendering, restoring the JBVS art style.</p>
+                <div class="tech-stack">
+                    <span>Unity URP</span> <span>HLSL/GLSL</span> <span>Shader Graph</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <img src="{{ url_for('static', filename='xiwa.jpg') }}" alt="Hivarosa Revolution" class="project-image">
+            <div class="project-content">
+                <h3>Hivarosa: Revolution</h3>
+                <p class="role">Role: Lead Level & System Designer</p>
+                <p class="desc">A Steampunk-themed open-world action RPG. Designed the world view, level layouts, character attributes, and combat systems.</p>
+                <div class="tech-stack">
+                    <span>Unreal Engine 5</span> <span>Level Design</span> <span>System Design</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <img src="{{ url_for('static', filename='jiujiu.jpg') }}" alt="Design Projects" class="project-image">
+            <div class="project-content">
+                <h3>UI/UX & Character Design</h3>
+                <p class="role">Role: Lead Designer</p>
+                <p class="desc">Designed intuitive UI/UX for the "Jiujiu" rental app and created the official IP mascot (Mei Xiao Pang) for Meipi Village.</p>
+                <div class="tech-stack">
+                    <span>Figma</span> <span>Photoshop</span> <span>IP Design</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

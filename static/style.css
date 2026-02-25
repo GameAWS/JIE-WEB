@@ -1,0 +1,464 @@
+/* 基础重置 */
+body, h1, h2, h3, p, ul {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+/* 导航栏样式 */
+nav {
+    background-color: #2c3e50;
+    color: white;
+    padding: 1rem 0;
+}
+.nav-container {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+.nav-links li {
+    margin-left: 20px;
+}
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+.nav-links a:hover {
+    color: #3498db;
+}
+
+/* 主体内容样式 */
+main {
+    width: 80%;
+    margin: 2rem auto;
+    min-height: 70vh;
+}
+section {
+    background: white;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* 页脚样式 */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #2c3e50;
+    color: white;
+}
+/* --- 补充样式：学术经历页 --- */
+.resume-item {
+    margin-bottom: 1.5rem;
+}
+.date {
+    color: #7f8c8d;
+    font-size: 0.9em;
+    margin-bottom: 0.5rem;
+}
+.paper-list {
+    list-style-type: none; /* 去掉默认的小圆点 */
+}
+.paper-list li {
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+    padding-left: 1rem;
+    border-left: 3px solid #bdc3c7; /* 左侧加一条竖线装饰 */
+}
+.links {
+    margin-top: 0.5rem;
+}
+.links a {
+    color: #3498db;
+    text-decoration: none;
+    margin-right: 15px;
+    font-size: 0.9em;
+}
+.links a:hover {
+    text-decoration: underline;
+}
+
+/* --- 学术风专属排版 (Academic Vibe) --- */
+
+/* 章节标题底部的细线，增加严肃感 */
+h2 {
+    color: #2c3e50;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    letter-spacing: 0.5px;
+}
+
+/* 论文列表容器 */
+.publication-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem; /* 每篇论文之间的间距 */
+}
+
+/* 单篇论文区块 */
+.pub-item {
+    padding-bottom: 1.2rem;
+    border-bottom: 1px solid #e0e0e0;
+}
+.pub-item:last-child {
+    border-bottom: none; /* 最后一篇不加底线 */
+}
+
+/* 论文标题 */
+.pub-title {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #2980b9; /* 学术蓝 */
+    line-height: 1.4;
+    margin-bottom: 0.3rem;
+}
+
+/* 作者列表 */
+.pub-authors {
+    font-size: 0.95em;
+    color: #333;
+    margin-bottom: 0.2rem;
+}
+
+/* 你的名字特殊加粗 */
+.pub-authors strong {
+    color: #000;
+    text-decoration: underline; /* 许多学者喜欢把自己的名字加下划线 */
+}
+
+/* 会议/期刊名称 */
+.pub-venue {
+    font-size: 0.95em;
+    font-style: italic;
+    color: #555;
+    margin-bottom: 0.5rem;
+}
+
+/* 论文状态标签 (Under Review, Accepted, Published) */
+.pub-status {
+    display: inline-block;
+    font-size: 0.75em;
+    font-weight: bold;
+    padding: 0.2rem 0.5rem;
+    border-radius: 3px;
+    margin-left: 10px;
+    vertical-align: middle;
+    text-transform: uppercase;
+}
+.status-review {
+    background-color: #fdf2e9;
+    color: #d35400; /* 橙色表示审核中 */
+}
+.status-accepted {
+    background-color: #e8f8f5;
+    color: #16a085; /* 绿色表示已录用 */
+}
+.status-published {
+    background-color: #ebf5fb;
+    color: #2980b9; /* 蓝色表示已发表 */
+}
+
+/* 学术链接按钮 (如 [PDF], [Code]) */
+.pub-links a {
+    font-size: 0.9em;
+    font-family: monospace; /* 代码等宽字体，很有极客学术感 */
+    color: #e74c3c;
+    text-decoration: none;
+    margin-right: 12px;
+    font-weight: bold;
+}
+.pub-links a:hover {
+    text-decoration: underline;
+    color: #c0392b;
+}
+/* --- 首页新布局 (Hero Section with Avatar) --- */
+.hero {
+    padding: 3rem; /* 增加一些内边距 */
+}
+
+.hero-container {
+    display: flex;
+    align-items: center; /* 垂直居中对齐 */
+    justify-content: space-between; /* 文字靠左，图片靠右 */
+    gap: 4rem; /* 文字和图片之间的间距 */
+}
+
+.hero-text {
+    flex: 1; /* 文字区域占据剩余空间 */
+}
+
+.hero-subtitle {
+    font-size: 1.2em;
+    color: #555;
+    margin-bottom: 1.5rem;
+}
+
+.hero-intro {
+    margin-top: 1.5rem;
+    font-size: 1.05em;
+    line-height: 1.7;
+    color: #34495e;
+}
+
+/* 研究方向小模块优化 */
+.research-interests {
+    background-color: #f0f7fd;
+    border-left: 5px solid #3498db;
+    padding: 1rem 1.5rem;
+    margin: 1.5rem 0;
+    border-radius: 0 8px 8px 0;
+}
+.research-interests h3 {
+    margin-bottom: 0.5rem;
+    color: #2c3e50;
+    font-size: 1.1em;
+}
+.research-interests p {
+    font-weight: 600;
+    color: #2980b9;
+    margin: 0;
+}
+
+/* 按钮组优化 */
+.links .btn {
+    margin-right: 1rem;
+    padding: 0.7rem 1.5rem;
+    border-radius: 30px; /* 圆角按钮更现代 */
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+/* 优化邮箱按钮的颜色与对比度 */
+.btn-primary, .btn-primary:visited, .btn-primary:active {
+    background-color: #2c3e50; /* 换成深藏青色，显得更专业沉稳 */
+    color: #ffffff !important; /* 强制字体为纯白色，避免被默认链接颜色覆盖 */
+    text-decoration: none;
+}
+.btn-primary:hover {
+    background-color: #1a252f; /* 鼠标悬浮时颜色加深 */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(44, 62, 80, 0.3);
+}
+.btn-secondary {
+    background-color: #e6e6e6;
+    color: #333;
+}
+.btn-secondary:hover {
+    background-color: #d4d4d4;
+    transform: translateY(-2px);
+}
+
+/* 头像样式 */
+.hero-image-container {
+    flex-shrink: 0; /* 防止头像被挤压 */
+}
+
+.hero-avatar {
+    width: 220px;  /* 头像宽度 */
+    height: 220px; /* 头像高度，保持和宽度一致 */
+    border-radius: 50%; /* 变成圆形 */
+    object-fit: cover; /* 保证图片内容填充圆形且不变形 */
+    border: 5px solid white; /* 白边框 */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15); /* 更有质感的阴影 */
+}
+
+/* 技能列表网格优化 */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* 响应式网格 */
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+.skill-category h4 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 0.5rem;
+}
+.skill-category ul {
+    list-style: none;
+    padding-left: 0;
+}
+.skill-category li {
+    margin-bottom: 0.5rem;
+    padding-left: 1.2rem;
+    position: relative;
+    color: #555;
+}
+/* 技能点前面的小图标 */
+.skill-category li::before {
+    content: '🔹';
+    position: absolute;
+    left: 0;
+    font-size: 0.8em;
+    top: 2px;
+}
+
+/* --- 响应式适配 (手机端) --- */
+/* 当屏幕宽度小于 768px 时 (平板和手机) */
+@media (max-width: 768px) {
+    .hero-container {
+        flex-direction: column-reverse; /* 手机上把文字放上面，图片放下面，或者反过来 */
+        text-align: center; /* 文字居中 */
+        gap: 2rem;
+    }
+    .hero {
+        padding: 2rem 1rem;
+    }
+    .research-interests {
+        text-align: left; /* 研究方向还是左对齐好看点 */
+    }
+    .hero-avatar {
+        width: 180px; /* 手机上头像稍微小一点 */
+        height: 180px;
+    }
+    .links {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .links .btn {
+        margin-right: 0;
+        width: 100%; /* 按钮占满一行 */
+        text-align: center;
+    }
+}
+/* =========================================
+   1. 工作经历：卡片化设计
+   ========================================= */
+.experience-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem; /* 卡片之间的间距 */
+}
+
+.resume-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 1.8rem 2rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+    border-left: 5px solid #3498db; /* 左侧蓝色装饰条，增加大厂专业感 */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.resume-card:hover {
+    transform: translateY(-3px); /* 鼠标悬浮时轻微上浮 */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.resume-card h3 {
+    color: #2c3e50;
+    margin-bottom: 0.3rem;
+    font-size: 1.25em;
+}
+
+.resume-card .date {
+    color: #7f8c8d;
+    font-size: 0.9em;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.resume-card ul {
+    padding-left: 1.2rem;
+    color: #444;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.resume-card ul li {
+    margin-bottom: 0.5rem;
+}
+
+
+/* =========================================
+   2. 作品集：缩小尺寸与卡片美化
+   ========================================= */
+.project-grid {
+    display: grid;
+    /* 关键修改：将 minmax(320px) 缩小到 260px，这样一行可以排下更多卡片，整体变小 */
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.8rem;
+}
+
+.project-card {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.12);
+}
+
+/* 缩小图片尺寸 */
+.project-image {
+    width: 100%;
+    height: 160px; /* 关键修改：图片高度从 220px 降为 160px，不再喧宾夺主 */
+    object-fit: cover; /* 保证图片填满且不拉伸变形 */
+    border-bottom: 3px solid #f0f7fd;
+    transition: transform 0.5s ease;
+}
+
+.project-card:hover .project-image {
+    transform: scale(1.05); /* 鼠标放上去图片微微放大 */
+}
+
+.project-content {
+    padding: 1.2rem; /* 适当减小内边距，配合整体变小的卡片 */
+    flex-grow: 1;
+    background-color: white;
+    z-index: 1;
+}
+
+.project-content h3 {
+    margin-bottom: 0.4rem;
+    color: #2c3e50;
+    font-size: 1.1em;
+}
+
+.project-content .role {
+    font-weight: 600;
+    color: #3498db;
+    font-size: 0.85em;
+    margin-bottom: 0.6rem;
+}
+
+.project-content .desc {
+    font-size: 0.9em;
+    color: #555;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+}
+
+.project-content .tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.project-content .tech-stack span {
+    background: #f1f8ff;
+    border: 1px solid #d0e8ff;
+    padding: 0.2rem 0.5rem;
+    border-radius: 15px;
+    font-size: 0.75em;
+    color: #2980b9;
+    font-weight: bold;
+}

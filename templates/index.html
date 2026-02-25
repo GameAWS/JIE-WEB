@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="hero">
+    <div class="hero-container">
+        <div class="hero-text">
+            <h2>Hi, I'm Jie Hu</h2>
+            <p class="hero-subtitle">A passionate <strong>Game Designer</strong>, <strong>Technical Artist</strong>, and experienced <strong>Project Manager</strong> based in Shanghai.</p>
+
+            <div class="research-interests">
+                <h3>🔬 Research & Expertise</h3>
+                <p>
+                    Game Design | Computer Graphics (CG) | AI & AIGC | Marketing Strategy
+                </p>
+            </div>
+
+            <p class="hero-intro">With a unique blend of technical artistry (UE5/Unity), academic depth in AI, and proven success in managing top-tier game publishing projects (NetEase, Tencent, Lilith), I bridge the gap between creative vision, technology implementation, and market success.</p>
+
+            <div class="links">
+                <a href="mailto:122089111@qq.com" class="btn btn-primary">Email Me</a>
+                <a href="#" class="btn btn-secondary">Download Resume</a>
+            </div>
+        </div>
+
+        <div class="hero-image-container">
+            <img src="{{ url_for('static', filename='me.jpg') }}" alt="Jie Hu Profile Picture" class="hero-avatar">
+        </div>
+    </div>
+</section>
+
+<section class="skills">
+    <h3>Core Competencies</h3>
+    <div class="skills-grid">
+        <div class="skill-category">
+            <h4>Technical Art & Engine</h4>
+            <ul>
+                <li>Unreal Engine 5 / Unity</li>
+                <li>Shader Dev (GLSL/HLSL)</li>
+                <li>Procedural Modeling</li>
+                <li>C# / C++ Basics</li>
+            </ul>
+        </div>
+        <div class="skill-category">
+            <h4>AIGC & Innovation</h4>
+            <ul>
+                <li>ComfyUI Workflows</li>
+                <li>Diffusion Models (LoRA/ControlNet)</li>
+                <li>AI Agent Dev</li>
+            </ul>
+        </div>
+        <div class="skill-category">
+            <h4>Management & Publishing</h4>
+            <ul>
+                <li>Marketing Strategy (China Region)</li>
+                <li>Cross-functional Leadership</li>
+                <li>Agile / TAPD</li>
+                <li>Data-Driven Decision Making</li>
+            </ul>
+        </div>
+         <div class="skill-category">
+            <h4>Art & Design Tools</h4>
+            <ul>
+                <li>3ds Max / Maya / Blender</li>
+                <li>Substance Painter (PBR)</li>
+                <li>Adobe Creative Suite</li>
+            </ul>
+        </div>
+    </div>
+</section>
+{% endblock %}
