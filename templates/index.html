@@ -1,39 +1,150 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<section class="hero">
-    <div class="hero-container">
-        <div class="hero-text">
-            <h2>Hi, I'm Jie Hu</h2>
-            <p class="hero-subtitle">A passionate <strong>Game Designer</strong>, <strong>Technical Artist</strong>, and experienced <strong>Project Manager</strong> based in Shanghai.</p>
+<style>
+    /* 新增 News 模块的样式 */
+    .news-list {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
 
-            <div class="research-interests">
-                <h3>🔬 Research & Expertise</h3>
-                <p>
-                    Game Design | Computer Graphics (CG) | AI & AIGC | Marketing Strategy
+    .news-item {
+        display: flex;
+        align-items: baseline;
+        gap: 1.5rem;
+        line-height: 1.6;
+    }
+
+    .news-date {
+        flex-shrink: 0;
+        width: 110px;
+        font-weight: bold;
+        color: #2980b9;
+        font-size: 0.95rem;
+    }
+
+    .news-content {
+        flex-grow: 1;
+        color: #444;
+        font-size: 1rem;
+    }
+
+    /* 用于隐藏多余新闻的类 */
+    .news-hidden {
+        display: none;
+    }
+
+    .show-more-btn {
+        background: none;
+        border: none;
+        color: #7f8c8d;
+        cursor: pointer;
+        font-weight: bold;
+        padding: 0;
+        font-size: 0.95rem;
+        margin-top: 1rem;
+        text-decoration: underline;
+        transition: color 0.2s;
+    }
+
+    .show-more-btn:hover {
+        color: #2c3e50;
+    }
+
+    /* 手机端响应式适配 */
+    @media (max-width: 600px) {
+        .news-item {
+            flex-direction: column;
+            gap: 0.2rem;
+        }
+        .news-date {
+            width: auto;
+            font-size: 0.9rem;
+        }
+    }
+</style>
+
+<section class="hero">
+    <div class="hero-container" style="display: flex; flex-wrap: wrap; gap: 3rem; align-items: center; justify-content: space-between;">
+
+        <div class="hero-text" style="flex: 1; min-width: 300px;">
+            <h2 style="font-size: 2.5rem; color: #2c3e50; margin-bottom: 0.5rem;">Hi, I'm Jie Hu | 胡捷</h2>
+            <p class="hero-subtitle" style="font-size: 1.2rem; color: #555; margin-bottom: 1.5rem;">A passionate <strong>Game Designer</strong>, <strong>Technical Artist</strong>, and experienced <strong>Project Manager</strong> based in Shanghai.</p>
+
+            <div class="research-interests" style="margin-bottom: 1.5rem;">
+                <h3 style="color: #2c3e50; font-size: 1.2rem; margin-bottom: 0.5rem;">🔬 Research & Expertise</h3>
+                <p style="color: #7f8c8d; font-weight: 500;">
+                    Game Design | Computer Graphics (CG) | AI & AIGC | Project Management
                 </p>
             </div>
 
-            <p class="hero-intro">With a unique blend of technical artistry (UE5/Unity), academic depth in AI, and proven success in managing top-tier game publishing projects (NetEase, Tencent, Lilith), I bridge the gap between creative vision, technology implementation, and market success.</p>
+            <div class="hero-intro" style="font-size: 1.05rem; line-height: 1.7; color: #444; margin-bottom: 2rem;">
+                <p style="margin-bottom: 1rem;">
+                    I am a Master's student in <strong>Digital Media (Game Design)</strong> at <strong>Shanghai University of Engineering Science</strong>, advised by Prof. Yingfang Zhang . Currently, my research interests mainly focus on <strong>Generative AI, Human-Computer Interaction (HCI), and Computer Graphics</strong> (exploring ways to achieve scalable visual narratives and 3D reconstruction like 3DGS). I am also deeply investigating the intersection of cultural heritage and game development now.
+                </p>
+                <p style="margin-bottom: 1rem;">
+                    Previously, I received my bachelor's degree in <strong>Digital Media Art</strong> from <strong>Shanghai Jian Qiao University</strong> 😘, where I ranked in the Top 10% and won the Outstanding Graduation Thesis/Design Award for my 3D environment project. I have a broad and extensive interest in automated creative workflows and neuro-symbolic systems. I have also gained rich industry experience interning and working as a Technical Artist/PM at top-tier gaming companies including <strong>NetEase, Tencent (TiMi Studio), Papergames, and Lilith Games</strong>.
+                </p>
+                <p style="font-weight: bold; color: #2c3e50;">
+                    I welcome exploration, creating immersive worlds, and pushing technical boundaries! 🎮✨🚀
+                </p>
+            </div>
 
             <div class="links">
-                <a href="mailto:122089111@qq.com" class="btn btn-primary">Email Me</a>
-                <a href="#" class="btn btn-secondary">Download Resume</a>
+                <a href="mailto:122089111@qq.com" class="btn btn-primary" style="margin-right: 1rem; background-color: #2980b9; color: white; padding: 0.6rem 1.2rem; border-radius: 6px; text-decoration: none; font-weight: bold;">Email Me</a>
+                <a href="#" class="btn btn-secondary" style="background-color: #ecf0f1; color: #2c3e50; padding: 0.6rem 1.2rem; border-radius: 6px; text-decoration: none; font-weight: bold;">Download Resume</a>
             </div>
         </div>
 
-        <div class="hero-image-container">
-            <img src="{{ url_for('static', filename='me.jpg') }}" alt="Jie Hu Profile Picture" class="hero-avatar">
+        <div class="hero-image-container" style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-width: 250px;">
+            <img src="{{ url_for('static', filename='me.jpg') }}" alt="Jie Hu Profile Picture" class="hero-avatar" style="width: 220px; height: 220px; object-fit: cover; border-radius: 50%; box-shadow: 0 8px 16px rgba(0,0,0,0.1); border: 4px solid #fff;">
+
+            <div class="contact-info" style="margin-top: 1.5rem; text-align: center; background: #f8f9fa; padding: 0.8rem 1.5rem; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+                <p style="margin: 0; color: #7f8c8d; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px;">📬 Contact Me</p>
+                <a href="mailto:122089111@qq.com" style="color: #2980b9; text-decoration: none; font-weight: bold; font-size: 1.1rem; transition: color 0.2s;">122089111@qq.com</a>
+            </div>
         </div>
+
     </div>
 </section>
 
-<section class="skills">
-    <h3>Core Competencies</h3>
-    <div class="skills-grid">
+<section class="news" style="margin-top: 4rem;">
+    <h3 style="border-bottom: 2px solid #2c3e50; padding-bottom: 0.5rem; margin-bottom: 1.5rem; color: #2c3e50;">📰 News</h3>
+
+    <div class="news-list">
+        <div class="news-item">
+            <div class="news-date">Feb 2026</div>
+            <div class="news-content">Begin serving as a reviewer for the <strong> ICMR 2026 </strong> conference! </div>
+        </div>
+        <div class="news-item">
+            <div class="news-date">Dec 2025</div>
+            <div class="news-content">Started a new position as a <strong>Technical Artist</strong> at <strong>NetEase Games</strong>!</div>
+        </div>
+        <div class="news-item">
+            <div class="news-date">Sep 2025</div>
+            <div class="news-content">Joined <strong>Papergames (叠纸游戏)</strong> as an Art Project Manager for <em>Infinity Nikki (无限暖暖)</em>.</div>
+        </div>
+
+        <div class="news-item news-hidden">
+            <div class="news-date">Mar 2025</div>
+            <div class="news-content">Started working as R&D Project Manager (PPM) & TA at <strong>Tencent TiMi Studio</strong> on <em>DreamStar (元梦之星)</em>.</div>
+        </div>
+        <div class="news-item news-hidden">
+            <div class="news-date">Oct 2024</div>
+            <div class="news-content">Started as Marketing & Publishing Project Manager at <strong>Lilith Games</strong> in Shanghai.</div>
+        </div>
+    </div>
+
+    <button id="show-more-btn" class="show-more-btn" onclick="toggleNews()">Show more</button>
+</section>
+
+<section class="skills" style="margin-top: 4rem; margin-bottom: 3rem;">
+    <h3 style="border-bottom: 2px solid #2c3e50; padding-bottom: 0.5rem; margin-bottom: 1.5rem; color: #2c3e50;">💡 Core Competencies</h3>
+    <div class="skills-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem;">
         <div class="skill-category">
-            <h4>Technical Art & Engine</h4>
-            <ul>
+            <h4 style="color: #34495e; margin-bottom: 0.8rem;">Technical Art & Engine</h4>
+            <ul style="color: #555; line-height: 1.6; padding-left: 1.2rem;">
                 <li>Unreal Engine 5 / Unity</li>
                 <li>Shader Dev (GLSL/HLSL)</li>
                 <li>Procedural Modeling</li>
@@ -41,16 +152,16 @@
             </ul>
         </div>
         <div class="skill-category">
-            <h4>AIGC & Innovation</h4>
-            <ul>
+            <h4 style="color: #34495e; margin-bottom: 0.8rem;">AIGC & Innovation</h4>
+            <ul style="color: #555; line-height: 1.6; padding-left: 1.2rem;">
                 <li>ComfyUI Workflows</li>
                 <li>Diffusion Models (LoRA/ControlNet)</li>
                 <li>AI Agent Dev</li>
             </ul>
         </div>
         <div class="skill-category">
-            <h4>Management & Publishing</h4>
-            <ul>
+            <h4 style="color: #34495e; margin-bottom: 0.8rem;">Management & Publishing</h4>
+            <ul style="color: #555; line-height: 1.6; padding-left: 1.2rem;">
                 <li>Marketing Strategy (China Region)</li>
                 <li>Cross-functional Leadership</li>
                 <li>Agile / TAPD</li>
@@ -58,8 +169,8 @@
             </ul>
         </div>
          <div class="skill-category">
-            <h4>Art & Design Tools</h4>
-            <ul>
+            <h4 style="color: #34495e; margin-bottom: 0.8rem;">Art & Design Tools</h4>
+            <ul style="color: #555; line-height: 1.6; padding-left: 1.2rem;">
                 <li>3ds Max / Maya / Blender</li>
                 <li>Substance Painter (PBR)</li>
                 <li>Adobe Creative Suite</li>
@@ -67,4 +178,23 @@
         </div>
     </div>
 </section>
+
+<script>
+    function toggleNews() {
+        // 获取所有带有 news-hidden 类的元素
+        const hiddenItems = document.querySelectorAll('.news-hidden');
+        const btn = document.getElementById('show-more-btn');
+
+        // 判断当前是展开还是折叠状态
+        let isShowing = btn.innerText === 'Show less';
+
+        hiddenItems.forEach(item => {
+            // 如果正在展示，则隐藏它；如果隐藏了，则改为 flex 布局显示
+            item.style.display = isShowing ? 'none' : 'flex';
+        });
+
+        // 切换按钮文字
+        btn.innerText = isShowing ? 'Show more' : 'Show less';
+    }
+</script>
 {% endblock %}
