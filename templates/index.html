@@ -52,6 +52,51 @@
         color: #2c3e50;
     }
 
+    /* Hero 区域按钮样式 */
+    .hero-links {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+    }
+
+    .hero-links .btn {
+        flex: 1;
+        min-width: 140px;
+        text-align: center;
+        padding: 0.8rem 1.5rem;
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: bold;
+        box-sizing: border-box; /* 确保 padding 不会撑破宽度 */
+        transition: transform 0.2s, box-shadow 0.2s; /* 添加一点鼠标悬浮的动画效果 */
+    }
+
+    .hero-links .btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .btn-primary {
+        background-color: #2980b9;
+        color: white;
+    }
+
+    .btn-secondary {
+        background-color: #ecf0f1;
+        color: #2c3e50;
+    }
+
+    /* 手机端响应式适配：当屏幕小于 600px 时，按钮强制上下排列 */
+    @media (max-width: 600px) {
+        .hero-links {
+            flex-direction: column; /* 竖向排列 */
+            width: 100%;
+        }
+        .hero-links .btn {
+            width: 100%; /* 按钮宽度撑满屏幕 */
+        }
+    }
+
     /* 手机端响应式适配 */
     @media (max-width: 600px) {
         .news-item {
@@ -91,10 +136,10 @@
                 </p>
             </div>
 
-            <div class="links">
-                <a href="mailto:122089111@qq.com" class="btn btn-primary" style="margin-right: 1rem; background-color: #2980b9; color: white; padding: 0.6rem 1.2rem; border-radius: 6px; text-decoration: none; font-weight: bold;">Email Me</a>
-                <a href="#" class="btn btn-secondary" style="background-color: #ecf0f1; color: #2c3e50; padding: 0.6rem 1.2rem; border-radius: 6px; text-decoration: none; font-weight: bold;">Download Resume</a>
-            </div>
+            <div class="hero-links">
+    <a href="mailto:122089111@qq.com" class="btn btn-primary">Email Me</a>
+    <a href="#" class="btn btn-secondary">Download Resume</a>
+</div>
         </div>
 
         <div class="hero-image-container" style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-width: 250px;">
