@@ -2,7 +2,7 @@
 
 {% block content %}
 <style>
-    /* 建议将这些样式移动到你的 main.css 文件中以保持 HTML 整洁 */
+    /* --- 桌面端基础样式 --- */
     .pub-item {
         display: flex;
         flex-direction: row;
@@ -32,7 +32,6 @@
         gap: 0.3rem;
     }
 
-    /* 荣誉列表样式 */
     .honors-list {
         list-style-type: none;
         padding-left: 0;
@@ -59,7 +58,6 @@
         white-space: nowrap;
     }
 
-    /* 毕业设计模块专属样式 */
     .grad-container {
         display: flex;
         gap: 2rem;
@@ -73,7 +71,7 @@
 
     .grad-image {
         flex-shrink: 0;
-        width: 320px; /* 毕业设计的主图给得更大一些，方便展示细节 */
+        width: 320px;
         border-radius: 6px;
         overflow: hidden;
         box-shadow: 0 2px 8px rgba(0,0,0,0.1);
@@ -90,7 +88,6 @@
         flex-grow: 1;
     }
 
-    /* B站按钮样式 (采用B站主题粉色) */
     .bilibili-btn {
         display: inline-flex;
         align-items: center;
@@ -112,22 +109,40 @@
         box-shadow: 0 4px 8px rgba(251, 114, 153, 0.3);
     }
 
-    /* 移动端响应式：在手机上自动堆叠排列 */
+    /* --- 🌟 移动端响应式核心 🌟 --- */
     @media (max-width: 768px) {
-        
+
         .grad-container {
             flex-direction: column;
             align-items: flex-start;
             gap: 1.2rem;
         }
+
         .grad-image {
             width: 100%;
         }
+
         .honors-item {
             flex-direction: column;
             margin-bottom: 1.2rem;
         }
 
+        /* 强制论文列表上下堆叠！ */
+        .pub-item {
+            flex-direction: column !important; /* 加了 !important 提高优先级 */
+            gap: 1rem !important;
+        }
+
+        .pub-thumbnail {
+            width: 100% !important; /* 让图片占满手机屏幕宽度 */
+            max-width: 100% !important;
+        }
+
+        /* 让手机端的字稍微小一点点，避免满屏都是大字 */
+        .pub-title {
+            font-size: 1rem !important;
+            line-height: 1.5;
+        }
     }
 </style>
 

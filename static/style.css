@@ -26,19 +26,23 @@ nav {
 .nav-links {
     list-style: none;
     display: flex;
+    align-items: center; /* 🌟 核心修复1：确保单行和多行的选项在垂直方向完美居中对齐 */
 }
 .nav-links li {
-    margin-left: 20px;
+    margin-left: 30px; /* 稍微放大一点间距，让选项呼吸感更强 */
 }
 .nav-links a {
     color: white;
     text-decoration: none;
     font-weight: bold;
+    display: inline-block; /* 🌟 核心修复2：必须设为 inline-block，行高才会生效 */
+    line-height: 1.4;      /* 🌟 核心修复3：拉开折行文字的上下间距 */
+    text-align: center;    /* 折行时，文字居中对齐视觉上更平衡 */
+    transition: color 0.3s ease; /* 加个小动画让悬浮变色更平滑 */
 }
 .nav-links a:hover {
     color: #3498db;
 }
-
 /* 主体内容样式 */
 main {
     width: 80%;
