@@ -1,0 +1,481 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+    /* 建议将这些样式移动到你的 main.css 文件中以保持 HTML 整洁 */
+    .pub-item {
+        display: flex;
+        flex-direction: row;
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+        align-items: flex-start;
+    }
+
+    .pub-thumbnail {
+        flex-shrink: 0;
+        width: 160px;
+    }
+
+    .pub-thumbnail img {
+        width: 100%;
+        height: auto;
+        border-radius: 6px;
+        border: 1px solid #ecf0f1;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        object-fit: cover;
+    }
+
+    .pub-content {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 0.3rem;
+    }
+
+    /* 荣誉列表样式 */
+    .honors-list {
+        list-style-type: none;
+        padding-left: 0;
+        margin: 0;
+    }
+
+    .honors-item {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 0.8rem;
+        line-height: 1.5;
+    }
+
+    .honors-item .award-name {
+        color: #2c3e50;
+        flex-grow: 1;
+        padding-right: 1rem;
+    }
+
+    .honors-item .award-date {
+        color: #7f8c8d;
+        font-family: 'Georgia', serif;
+        font-style: italic;
+        white-space: nowrap;
+    }
+
+    /* 毕业设计模块专属样式 */
+    .grad-container {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+        background: #fdfdfd;
+        padding: 1.5rem;
+        border-radius: 8px;
+        border: 1px solid #eee;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+    }
+
+    .grad-image {
+        flex-shrink: 0;
+        width: 320px; /* 毕业设计的主图给得更大一些，方便展示细节 */
+        border-radius: 6px;
+        overflow: hidden;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .grad-image img {
+        width: 100%;
+        height: auto;
+        display: block;
+        object-fit: cover;
+    }
+
+    .grad-content {
+        flex-grow: 1;
+    }
+
+    /* B站按钮样式 (采用B站主题粉色) */
+    .bilibili-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        background-color: #fb7299;
+        color: #fff !important;
+        padding: 0.6rem 1.2rem;
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 0.95rem;
+        margin-top: 1rem;
+        transition: all 0.2s ease;
+    }
+
+    .bilibili-btn:hover {
+        background-color: #fc8bab;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(251, 114, 153, 0.3);
+    }
+
+    /* 移动端响应式：在手机上自动堆叠排列 */
+    @media (max-width: 768px) {
+
+        .grad-container {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 1.2rem;
+        }
+        .grad-image {
+            width: 100%;
+        }
+        .honors-item {
+            flex-direction: column;
+            margin-bottom: 1.2rem;
+        }
+
+        /* 👇 新增：修复出版物列表在手机端挤压的问题 👇 */
+        .pub-item {
+            flex-direction: column; /* 核心修复：把左右排列变成上下排列 */
+            gap: 1rem;              /* 稍微缩小图片和文字之间的间距 */
+            align-items: stretch;   /* 让内容自然拉伸 */
+        }
+
+        .pub-thumbnail {
+            width: 100%;            /* 手机端让图片占满整个卡片宽度 */
+            max-width: 100%;        /* 取消 160px 的固定宽度限制 */
+        }
+        /* 👆 新增结束 👆 */
+    }
+</style>
+
+<section class="education" style="margin-bottom: 3rem;">
+    <h2 style="border-bottom: 2px solid #2c3e50; padding-bottom: 0.5rem; margin-bottom: 1.5rem;">🎓 Education</h2>
+    <div class="resume-item" style="margin-bottom: 1.5rem;">
+        <h3 style="color: #2c3e50;">Master of Arts in Digital Media (Game Design)</h3>
+        <p class="date" style="color: #7f8c8d; font-family: 'Georgia', serif; font-style: italic;">Sep 2023 - Jun 2026 | Shanghai University of Engineering Science</p>
+        <p><strong>GPA:</strong> Top 5% (Awarded First and Second-class Academic Scholarships)</p>
+    </div>
+
+    <div class="resume-item">
+        <h3 style="color: #2c3e50;">Bachelor of Arts in Digital Media Art</h3>
+        <p class="date" style="color: #7f8c8d; font-family: 'Georgia', serif; font-style: italic;">Sep 2019 - Jun 2023 | Shanghai Jian Qiao University</p>
+        <p><strong>GPA:</strong> Top 10% (Awarded University Scholarships consecutively)</p>
+    </div>
+</section>
+
+<section class="honors" style="margin-bottom: 3rem;">
+    <h2 style="border-bottom: 2px solid #2c3e50; padding-bottom: 0.5rem; margin-bottom: 1.5rem;">🏆 Honors & Awards</h2>
+    <ul class="honors-list">
+        <li class="honors-item">
+            <span class="award-name"><strong>National 3rd Prize</strong>, 11th Future Designer National College Digital Art & Design Awards (NCDA)</span>
+            <span class="award-date">Aug 2023</span>
+        </li>
+        <li class="honors-item">
+            <span class="award-name"><strong>Second Prize</strong>, 9th "Huichuang Youth" Shanghai College Students Cultural and Creative Works Exhibition</span>
+            <span class="award-date">Aug 2024</span>
+        </li>
+        <li class="honors-item">
+            <span class="award-name"><strong>Third Prize</strong> (2 Awards), 9th "Huichuang Youth" Shanghai College Students Cultural and Creative Works Exhibition</span>
+            <span class="award-date">Aug 2024</span>
+        </li>
+        <li class="honors-item">
+            <span class="award-name"><strong>First Prize</strong>, 10th & 11th Future Designer NCDA (Shanghai Regional)</span>
+            <span class="award-date">2022 - 2023</span>
+        </li>
+        <li class="honors-item">
+            <span class="award-name"><strong>Outstanding Graduation Thesis/Design Award</strong>, Shanghai Jian Qiao University</span>
+            <span class="award-date">Jun 2023</span>
+        </li>
+        <li class="honors-item">
+            <span class="award-name"><strong>Third Prize</strong>, 10th, 12th & 13th Future Designer NCDA (Shanghai Regional)</span>
+            <span class="award-date">2022 - 2025</span>
+        </li>
+    </ul>
+</section>
+
+<section class="graduation-design" style="margin-bottom: 3rem;">
+    <h2 style="border-bottom: 2px solid #2c3e50; padding-bottom: 0.5rem; margin-bottom: 1.5rem;">🎨 Graduation Thesis & Design</h2>
+    <div class="grad-container">
+        <div class="grad-image">
+            <img src="{{ url_for('static', filename='akls.jpg') }}" alt="Lost Ruins Akrosa Main View">
+        </div>
+        <div class="grad-content">
+            <h3 style="margin-top: 0; color: #2c3e50; font-size: 1.3rem;">Lost Ruins - Akrosa: 3D Game Environment Design</h3>
+            <p style="color: #7f8c8d; font-size: 0.95rem; margin-bottom: 0.8rem;">(《失落遗迹-阿克洛萨》三维游戏场景设计)</p>
+            <p style="font-size: 0.95rem; line-height: 1.6; color: #444;">
+                Awarded the <strong>Outstanding Graduation Thesis/Design</strong> at Shanghai Jian Qiao University.
+                This project focuses on the comprehensive creation of a high-quality 3D game environment using Unreal Engine 5. It encompasses the full PBR pipeline from concept art and 3D modeling to texturing, material creation, and advanced scene lighting optimization.
+            </p>
+
+            <a href="https://www.bilibili.com/video/BV1Ls4y1G7gX/?spm_id_from=333.1387.homepage.video_card.click&vd_source=3a49c41c5ab72477182782a79a832e8d" target="_blank" class="bilibili-btn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="vertical-align: middle;">
+                    <path d="M7 6L9 8H15L17 6H20C21.1046 6 22 6.89543 22 8V18C22 19.1046 21.1046 20 20 20H4C2.89543 20 2 19.1046 2 18V8C2 6.89543 2.89543 6 4 6H7ZM6 10V12C6 12.5523 6.44772 13 7 13C7.55228 13 8 12.5523 8 12V10C8 9.44772 7.55228 9 7 9C6.44772 9 6 9.44772 6 10ZM16 10V12C16 12.5523 16.4477 13 17 13C17.5523 13 18 12.5523 18 12V10C18 9.44772 17.5523 9 17 9C16.4477 9 16 9.44772 16 10Z" fill="white"/>
+                </svg>
+                Watch on Bilibili
+
+            </a>
+        </div>
+    </div>
+
+    <div class="grad-container" style="margin-bottom: 2.5rem;">
+        <div class="grad-image">
+            <img src="{{ url_for('static', filename='maqiao_game.jpg') }}" alt="Maqiao Culture Game Design Main View">
+        </div>
+        <div class="grad-content">
+            <h3 style="margin-top: 0; color: #2c3e50; font-size: 1.3rem;">Research on the Application of Maqiao Culture in Adventure Puzzle Games</h3>
+            <p style="color: #7f8c8d; font-size: 0.95rem; margin-bottom: 0.8rem;">(《马桥文化在冒险解谜游戏中的应用研究》)</p>
+            <p style="font-size: 0.95rem; line-height: 1.6; color: #444;">
+                <strong>Master's Graduation Thesis & Project:</strong> This research explores the digital revitalization of the Maqiao cultural heritage. By integrating traditional archaeological elements into an interactive 3D adventure puzzle game format, the project aims to enhance player engagement and promote the preservation of "cold heritage" through modern game design methodologies and narrative integration.
+            </p>
+
+            <a href="https://www.bilibili.com/video/BV1XtyNByEWj/?spm_id_from=333.1387.homepage.video_card.click&vd_source=3a49c41c5ab72477182782a79a832e8d" target="_blank" class="bilibili-btn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="vertical-align: middle;">
+                    <path d="M7 6L9 8H15L17 6H20C21.1046 6 22 6.89543 22 8V18C22 19.1046 21.1046 20 20 20H4C2.89543 20 2 19.1046 2 18V8C2 6.89543 2.89543 6 4 6H7ZM6 10V12C6 12.5523 6.44772 13 7 13C7.55228 13 8 12.5523 8 12V10C8 9.44772 7.55228 9 7 9C6.44772 9 6 9.44772 6 10ZM16 10V12C16 12.5523 16.4477 13 17 13C17.5523 13 18 12.5523 18 12V10C18 9.44772 17.5523 9 17 9C16.4477 9 16 9.44772 16 10Z" fill="white"/>
+                </svg>
+                Watch on Bilibili
+
+            </a>
+        </div>
+    </div>
+
+
+</section>
+
+<section class="publications">
+    <h2 style="border-bottom: 2px solid #2c3e50; padding-bottom: 0.5rem; margin-bottom: 1.5rem;">📝 Publications</h2>
+
+    <div class="publication-list">
+
+         <div class="pub-item">
+            <div class="pub-thumbnail">
+                <img src="{{ url_for('static', filename='dualdraft.jpg') }}" alt="DualDraft Project Thumbnail">
+            </div>
+            <div class="pub-content">
+                <div class="pub-title">
+                    DualDraft: Enabling Zero-Experience Users to Create Consistent Visual Narratives via a Dual-Mode Co-Creative Agent
+                    <span class="pub-status status-review">Under Review</span>
+                </div>
+                <div class="pub-authors">
+                    <strong>Jie Hu</strong>, Zhaoli Jiang, Yingfang Zhang <em></em>
+                </div>
+                <div class="pub-venue">
+                    ACM Symposium on User Interface Software and Technology <strong>(UIST 2026)</strong> CCF-A.
+                </div>
+                <div class="pub-links">
+                    <a href="#">[PDF]</a> <a href="#">[Project Page]</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="pub-item">
+            <div class="pub-thumbnail">
+                <img src="{{ url_for('static', filename='storynode.jpg') }}" alt="StoryNode Thumbnail">
+            </div>
+            <div class="pub-content">
+                <div class="pub-title">
+                    StoryNode: A Node-Based Visual Orchestration Framework for Automated Comic and Storyboard Generation
+                    <span class="pub-status status-review">Under Review</span>
+                </div>
+                <div class="pub-authors">
+                    <strong>Jie Hu</strong>, Zhaoli Jiang, Yingfang Zhang <em></em>
+                </div>
+                <div class="pub-venue">
+                    International Journal of Human–Computer Interaction <strong>(IJHCI)</strong> CCF-B.
+                </div>
+                <div class="pub-links">
+                    <a href="#">[PDF]</a> <a href="#">[Project Page]</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="pub-item">
+            <div class="pub-thumbnail">
+                <img src="{{ url_for('static', filename='komixflow.jpg') }}" alt="KomixFlow Thumbnail">
+            </div>
+            <div class="pub-content">
+                <div class="pub-title">
+                    KomixFlow: A Retrieval-Augmented Multimodal Framework for Long-Horizon Visual Narrative Generation
+                    <span class="pub-status status-review">Under Review</span>
+                </div>
+                <div class="pub-authors">
+                    <strong>Jie Hu</strong>, Zhaoli Jiang, Yingfang Zhang <em></em>
+                </div>
+                <div class="pub-venue">
+                    ACM International Conference on Multimedia Retrieval <strong>(ICMR 2026)</strong> CCF-B.
+                </div>
+                <div class="pub-links">
+                    <a href="#">[PDF]</a> <a href="#">[Project Page]</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="pub-item">
+            <div class="pub-thumbnail">
+                <img src="{{ url_for('static', filename='neuro_symbolic.jpg') }}" alt="Neuro-Symbolic System Thumbnail">
+            </div>
+            <div class="pub-content">
+                <div class="pub-title">
+                    A Neuro-Symbolic Expert System for Controllable LLM-Driven Multimodal Content Synthesis
+                    <span class="pub-status status-review">Under Review</span>
+                </div>
+                <div class="pub-authors">
+                    <strong>Jie Hu</strong>, Zhaoli Jiang, Yingfang Zhang <em></em>
+                </div>
+                <div class="pub-venue">
+                    Expert Systems With Applications <strong>(ESWA)</strong> SCI Q1.
+                </div>
+                <div class="pub-links">
+                    <a href="#">[PDF]</a> <a href="#">[Project Page]</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="pub-item">
+            <div class="pub-thumbnail">
+                <img src="{{ url_for('static', filename='maqiao_pottery.jpg') }}" alt="Maqiao Pottery Thumbnail">
+            </div>
+            <div class="pub-content">
+                <div class="pub-title">
+                    Exploration of Revitalizing "Cold Heritage" Empowered by Generative AI: A Case Study of Maqiao Pottery Particle System<br>
+                    <span style="font-size: 0.9em; color: #7f8c8d;">(生成式AI赋能下的博物馆“冷门”文物活化路径探索-以马桥文化陶器粒子交互系统为例)</span>
+                    <span class="pub-status status-review">Under Review</span>
+                </div>
+                <div class="pub-authors">
+                    <strong>Jie Hu</strong>, Zhaoli fixedJiang, Yingfang Zhang <em></em>
+                </div>
+                <div class="pub-venue">
+                    Southeast Culture (《东南文化》).
+                </div>
+                <div class="pub-links">
+                    <a href="#">[PDF]</a> <a href="#">[Video]</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="pub-item">
+            <div class="pub-thumbnail">
+                <img src="{{ url_for('static', filename='palimpsest_maqiao.jpg') }}" alt="Palimpsest VR Thumbnail">
+            </div>
+            <div class="pub-content">
+                <div class="pub-title">
+                    Palimpsest of Maqiao: An Immersive VR Visual Analytics Framework through Stylized 3D Gaussian Splatting
+                    <span class="pub-status status-review">Under Review</span>
+                </div>
+                <div class="pub-authors">
+                    <strong>Jie Hu</strong>, Zhaoli Jiang, Yingfang Zhang <em></em>
+                </div>
+                <div class="pub-venue">
+                    IEEE Transactions on Visualization and Computer Graphics <strong>(TVCG)</strong> CCF-A.
+                </div>
+                <div class="pub-links">
+                    <a href="#">[PDF]</a> <a href="#">[Video]</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="pub-item">
+            <div class="pub-thumbnail">
+                <img src="{{ url_for('static', filename='uav_3dgs.jpg') }}" alt="UAV Photogrammetry Thumbnail">
+            </div>
+            <div class="pub-content">
+                <div class="pub-title">
+                    Digital Regeneration of Historical Buildings Using UAV Photogrammetry and 3D Gaussian Splatting for Metaverse Environments
+                    <span class="pub-status status-review">Under Review</span>
+                </div>
+                <div class="pub-authors">
+                    <strong>Jie Hu</strong>, Zhaoli Jiang, Yingfang Zhang <em></em>
+                </div>
+                <div class="pub-venue">
+                    npj heritage science.
+                </div>
+                <div class="pub-links">
+                    <a href="#">[PDF]</a> <a href="#">[Video]</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="pub-item">
+            <div class="pub-thumbnail">
+                <img src="{{ url_for('static', filename='pixel_to_mesh.jpg') }}" alt="Pixel to Mesh Thumbnail">
+            </div>
+            <div class="pub-content">
+                <div class="pub-title">
+                    From Pixel to Mesh: Accelerating Game Asset Creation via a Semantically-Guided 2D-to-3D Generative Pipeline
+                    <span class="pub-status status-accepted">Accepted</span>
+                </div>
+                <div class="pub-authors">
+                    <strong>Jie Hu</strong>, Jinyu Li, Zixia Wang, Zhixian Li, Kachun Chan, Zhaoli Jiang, and Yingfang Zhang.
+                </div>
+                <div class="pub-venue">
+                    International Conference on Applied Human Factors and Ergonomics <strong>(AHFE 2026)</strong>.
+                </div>
+                <div class="pub-links">
+                    <a href="#">[PDF]</a> <a href="#">[DOI]</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="pub-item">
+            <div class="pub-thumbnail">
+                <img src="{{ url_for('static', filename='parametric_design.jpg') }}" alt="Parametric Design Thumbnail">
+            </div>
+            <div class="pub-content">
+                <div class="pub-title">
+                    Parametric Design Mechanism of Cultural Products Driven by AIGC <br>
+                    <span style="font-size: 0.9em; color: #7f8c8d;">(AIGC驱动的文化符号参数化文创设计机制)</span>
+                    <span class="pub-status status-published">Published</span>
+                </div>
+                <div class="pub-authors">
+                    <strong>Jie Hu</strong>，Zhaoli Jiang, Yingfang Zhang.
+                </div>
+                <div class="pub-venue">
+                    Shoes Technology And Design (《鞋类工艺与设计》), 2026.04
+                </div>
+                <div class="pub-links">
+                    <a href="#">[PDF]</a> <a href="#">[Journal Link]</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="pub-item">
+            <div class="pub-thumbnail">
+                <img src="{{ url_for('static', filename='miao_totem.jpg') }}" alt="Miao Totem Thumbnail">
+            </div>
+            <div class="pub-content">
+                <div class="pub-title">
+                    Research on the Application of Generative AI in the Digital Design of Miao Totem Symbols <br>
+                    <span style="font-size: 0.9em; color: #7f8c8d;">(生成式AI在苗族图腾符号数字化设计中的应用研究)</span>
+                    <span class="pub-status status-published">Published</span>
+                </div>
+                <div class="pub-authors">
+                    Zhaoli Jiang, Xiaoxian Ye, <strong>Jie Hu</strong>.
+                </div>
+                <div class="pub-venue">
+                    Package & Design (《包装&设计》), 2025.07
+                </div>
+                <div class="pub-links">
+                    <a href="#">[PDF]</a> <a href="#">[Journal Link]</a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="pub-item">
+            <div class="pub-thumbnail">
+                <img src="{{ url_for('static', filename='aigc_game.jpg') }}" alt="AIGC Game Design Thumbnail">
+            </div>
+            <div class="pub-content">
+                <div class="pub-title">
+                    Innovative Application of AIGC Technology in Digital Game Design
+                    <span class="pub-status status-published">Published</span>
+                </div>
+                <div class="pub-authors">
+                    <strong>Jie Hu</strong>, Yingfang Zhang, Zhaoli Jiang.
+                </div>
+                <div class="pub-venue">
+                    IEEE International Conference on Creative Design and Innovation <strong>(2024 International Conference on Digital and Innovation （ICDI 2024）)</strong>.
+                </div>
+                <div class="pub-links">
+                    <a href="#">[PDF]</a> <a href="#">[IEEE Xplore]</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+{% endblock %}
