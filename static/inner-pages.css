@@ -1,0 +1,11 @@
+html {
+    background: #f5f2ea;
+}
+
+body {
+    background:
+        radial-gradient(circle at 82% 8%, rgba(214, 109, 82, 0.11), transparent 28rem),
+        radial-gradient(circle at 8% 28%, rgba(113, 153, 139, 0.15), transparent 24rem),
+        #f5f2ea;
+    background-attachment: fixed;
+}
