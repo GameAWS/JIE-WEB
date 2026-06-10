@@ -1,4 +1,7 @@
-from flask import Flask, render_template
+import json
+from urllib.request import Request, urlopen
+
+from flask import Flask, jsonify, render_template, request
 
 app = Flask(__name__)
 
@@ -16,6 +19,19 @@ def academic():
 @app.route('/portfolio')
 def portfolio():
     return render_template('portfolio.html')
+
+@app.route('/api/visits')
+def visits():
+    action = 'up' if request.args.get('increment') == '1' else ''
+    counter_url = f'https://api.counterapi.dev/v1/jie-hu-portfolio/homepage/{action}'.rstrip('/')
+
+    try:
+        counter_request = Request(counter_url, headers={'User-Agent': 'Jie-Hu-Portfolio/1.0'})
+        with urlopen(counter_request, timeout=5) as response:
+            data = json.load(response)
+        return jsonify({'count': data.get('count', 0)})
+    except Exception:
+        return jsonify({'error': 'Visit counter unavailable'}), 503
 
 # ... 上面的路由代码保持不变 ...
 
