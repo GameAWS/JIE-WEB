@@ -1,0 +1,298 @@
+===== reference_cv.pdf pages=4 =====
+--- PAGE 1 ---
+上海工程技术大学
+ 硕士
+ 数媒与影像数字化（游戏设计）
+2023-2026
+上海建桥学院
+ 本科
+ 数字媒体艺术
+2019-2023
+网易（杭州）网络有限公司
+ 技术美术
+2025.12-至今
+胡捷
+男 | 年龄：24岁 | 
+ 13611760938 | 
+ 122089111@qq.com
+求职意向：游戏设计 | 期望城市：上海
+1. AIGC工具研发与学术研究：深入研究AIGC在游戏美术管线中的应用，主导研发了AI分镜导演、图片转3D资产等创新工具链，致
+力于以AI提升内容生产效率。具备相关领域的CHI、SIGGRAPH等顶会论文发表经验。
+2. 扎实的技术美术与程序化能力：拥有扎实的计算机图形学基础与编程能力，精通游戏引擎及着色器开发，可独立完成技术方案
+设计、工具脚本开发与渲染效果优化，为高品质视觉表现提供核心技术支持。
+3. 跨领域的项目管理与协作能力：在多家头部厂商经历技术、管理、发行等多岗位锻炼，善于制定项目计划、协调资源、把控质
+量，并能作为桥梁高效沟通技术、美术与策划团队，确保项目目标达成。
+4. 系统的游戏设计理论与行业洞察：拥有游戏设计硕士学位，对交互设计、玩家心理有系统认知。作为一名资深玩家，对游戏设
+计与用户体验有着独到的见解。我熟悉《最终幻想》系列、《剑网3》、《艾尔登法环》、《只狼：影逝二度》及《塞尔达传说》
+系列等经典作品，能将设计理论与行业实践结合。
+专业排名: 前10%
+主修课程: 游戏引擎研究、 游戏图形技术研究、 游戏交互设计研究与技术、 游戏人工智能、 VR游戏技术研究
+1、2023年获得研究生学业奖学金、2024年获研究生二等学业奖学金
+2、主修课程：游戏引擎研究，游戏场景设计，游戏图形技术研究，高级动画与影像设计研究，VR游戏研究等课程
+3、获得一类设计竞赛国奖、省一等奖若干
+GPA：专业前5%
+专业排名: 前10%
+1、获得2020-2021上海建桥学院三等奖学金、获得2021-2022上海建桥学院三等奖学金
+2、主修课程：三维动画和设计，计算机三维动画制作，插画，商业插画
+GPA：专业前10%
+1. AIGC工具链研发与主导：负责研发并落地多项AI工具以革新美术生产管线。主导开发了AIGC-LLM分镜导演工具，用于快速预演
+与镜头语言设计；独立研发了AIGC图片转3D资产工具链，实现了高质量图片到游戏可用模型的自动化生成，显著提升了场景搭建
+与角色原型的制作效率。
+2. AI驱动的研发管线探索：研究与落地AI视频生成/编辑技术在游戏实机画面中的应用，包括动态内容创建、宣传素材自动化生产
+等，致力于将多模态AI能力整合至游戏研发全流程。
+3. 前沿渲染技术与美术管线支持：将AI技术与传统计算机图形学结合，参与高品质项目的渲染技术攻坚与效果调优，并利用AI辅助
+进行写实材质生成、Shader开发与效果优化，提升项目整体视觉表现力与美术工业化水平。
+个人优势
+教育经历
+实习经历
+
+--- PAGE 2 ---
+上海暖叠网络科技有限公司（叠纸游戏）
+ 游戏美术PM
+2025.09-2025.12
+腾讯科技（上海）有限公司
+ 研发项目管理&技术美术
+2025.03-2025.08
+上海莉莉丝计算机技术有限公司（莉莉丝游戏）
+ 游戏发行PM
+2024.10-2025.03
+上海元领域数字科技有限公司（分众游戏）
+ 技术美术TA
+2023.05-2023.08
+印孚瑟斯技术（中国）有限公司
+ 插画师
+2021.06-2021.09
+2025.09-2025.12
+《无限暖暖》
+ 美术项目管理（APM）
+1. 负责跟进特效美术资源的全流程交付，包括大世界特效、战斗特效、商业化特效、过场特效等，与外包团队或内部特效师协调等
+环节的进度，确保特效资产符合项目风格和技术要求，并按时交付。
+2. 协助制定特效部分的具体开发计划和时间表，细化任务分配，设置里程碑。每日更新进度，监控特效制作的各个环节，识别并
+解决可能导致延误的风险，确保特效工作严格按计划执行。
+3. 作为特效团队与程序、策划、动画等其他部门之间的沟通桥梁，确保需求清晰传达，技术实现可行，并及时同步进度。
+1. 负责UE5 PC主机开放世界引擎组研发项目的全流程管理，制定详细项目计划，跟踪项目进度，协调资源，确保项目按时且高质
+量交付。
+2. 负责UE5 Demo中技术美术部分的开发工作，包括地图编辑、PCG生成及特效开发，确保技术实现符合预期标准。
+3. 负责元梦之星开放世界新玩法的客户端质量优化，确保用户体验和性能达到预期要求。
+4. 与策划、程序、美术等团队紧密沟通，明确项目需求，制定技术方案，推动项目进展，确保团队目标的实现。
+1. 负责统筹辅助中国区所有游戏产品的市场宣传与发行策略，确保品牌形象统一且高效传达。
+2. 负责管理游戏宣传物料的规划与制作，包括但不限于视频、平面设计等，满足不同渠道与平台的需求。
+3. 与项目团队紧密合作，确保宣传物料与游戏内容的高度一致性，提升用户体验。
+4. 监控并优化发行流程，通过数据分析及时调整市场宣传策略，增强市场竞争力。
+5. 协调跨部门资源，高效推进宣发项目的执行，确保按时完成高质量的宣传物料制作。
+6. 定期评估宣传效果，收集市场反馈，为产品优化和后续宣传提供决策支持。
+7. 管理并培训宣发团队，提升团队的专业技能与协作效率，构建高效的工作氛围。
+1. 与美术、程序团队协作，设计与实施渲染方案，解决视觉效果实现中的技术难题。
+2. 制定并持续优化美术资源开发流程、规范与管理标准，为团队提供技术支持，提升工作效率。
+3. 优化场景渲染方案，通过技术手段提升软件性能，保障游戏或应用的运行流畅度。
+4. 协同美术与引擎程序，排查并解决工具引擎的日常使用问题，确保开发流程顺畅。
+5. 参与Unity项目开发，负责渲染管线优化、地形编辑与灯光调整等专项工作。
+1、负责参与与制作原创绘本插画创造。
+2、负责接手勾线，上色与后期制作。
+3、制作完整的原创绘本设计以及 IP 等衍生品的文创设计。
+1.《无限暖暖》是叠纸游戏研发的暖暖系列第五代作品，一款多平台（PC、移动端、PS5）开放世界换装冒险游戏。
+2.作为APM负责所有美术特效板块的项目管理工作，包括大世界特效、祝福闪光特效、商业化特效、战斗特效、过程动画特效、多
+端特效的管线项目管理工作。
+3. 建立并优化特效制作管线，提升团队协作效率。管理特效相关的设计文档和资源版本，维护团队协作氛围，解决协作中的问
+题，并根据项目需求灵活调配人力与资源。
+4. 参与1.10丰收季、1.11拾光季、2.0伊赞之土超大版本、2.1、2.2春节版本的开发管理工作。
+项目经历
+
+--- PAGE 3 ---
+2025.03-2025.08
+UE5在研游戏
+ 技术美术
+2025.03-2025.08
+《元梦之星-山海寻灵》
+ 研发项目管理（PPM）
+2024.10-2025.03
+《剑与远征：启程》
+ 美术项目管理（PM）
+2023.05-2023.08
+《数禾》数字孪生项目开发
+ 技术美术
+1.作为项目主PM主导项目目标与范围管理，确保在有限周期内完成可玩版本的制作。
+2.组建10人跨职能团队（程序/美术/策划），设计敏捷小组结构，优化资源分配，降低美术成本。
+3.采用周迭代的管理方式，每周期交付相应的成果，通过TAPD追踪任务完成率＞85%。
+3.同时作为TA深度参与项目的Gameplay，美术部分地形与材质的开发工作。
+1. 基于“元梦之星”IP打造的沉浸式开放世界生存探索游戏，融合星际探险、宠物捕捉、资源采集、社交协作等核心玩法，构建多
+场景无缝衔接的元宇宙生态。
+2. 质量检测与流程把控：制定客户端模块测试规范：针对大世界场景加载、宠物战斗同步、资源采集交互等核心玩法设计测试用
+例；建立缺陷归因库：按模块（渲染/物理/AI）分类统计BUG，生成可视化报告驱动优先级修复。
+3.美术向BUG处理：协调美术与TA团队，解决特效材质渲染异常、地形材质穿透等问题；
+4.协作与风险管理；每周组织客户端不同模块（引擎、战斗、构建、PVP等）的进度同步会，对齐相关研发事宜。
+内容:
+1. 负责TGA年度最佳手机游戏提名的《剑与远征：启程》中国区的发行美术资产产出管理，确保项目按时高质量完成，为游戏的市
+场推广奠定基础。
+2. 协同研发与发行团队，确保版本内容与运营节点的一致性，保证项目按时发布。
+3. 管理外部供应商，制定详细的每周发行计划与策略，确保项目按时按质完成。
+业绩:
+作为PM参与游戏中国区的发行的宣传决策和脚本策划，跟进宣发的视频和平面物料的监修进度，与制作方老师与UA进行有效沟
+通。跟进产出500+套视频素材，100+套平面banner素材。
+内容:
+“数禾”数字孪生项目是一款专为数禾公司定制的高级借贷业务可视化解决方案，基于Unity这一领先的实时3D引擎构建。该项目
+旨在通过风格化的渲染技术，将复杂的借贷数据流程转化为直观、动态且易于理解的数字孪生模型。用户可以通过专属的移动应用
+（APP），随时随地实时查询、监控并优化借贷业务中的各个环节，实现业务流程的透明化、智能化管理。
+业绩:
+直接参与制作U3D项目，担任技术美术一职，负责整合修改美术资源，编辑地图，编写Shader，提升渲染效果，优化渲染流程和
+美术资源，与程序部门进行交接，作为技术顾问，解决与修改甲方的技术问题以及新增的要求。
+TOPIK韩国语能力考试2级
+资格证书
+作品展示
+
+--- PAGE 4 ---
+Boss 直聘APP
+微信小程序
+
+===== old_web_cv.pdf pages=4 =====
+--- PAGE 1 ---
+Jie Hu 胡捷
+Male | 24 years old | Native place：Shanghai
+ 13611760938
+ 
+ 122089111@qq.com
+Game Development | City：Shanghai
+Professional Summary
+1. Proficient in 3D modeling software such as 3DMAX, Maya, and Blender, possessing professional skills in the
+entire process from model creation, UV unfolding, texture drawing to physical substrate rendering (PBR). In the
+field of game design, I am particularly skilled in stylized and next-generation game scene and level design,
+passionate about game art, and committed to creating high-quality game visual experiences.
+2. With technical art (TA) internship experience, proficient in programming languages such as C #, C++, as well as
+GLSL and HLSL shader languages, deeply involved in the development of Unity engine and Unreal Engine 4/5
+projects. Capable of writing Shader and DCC tool scripts and programmatic modeling, with a deep
+understanding and practical experience in rendering pipelines, providing solid technical support for game
+development.
+3.In terms of visual communication, proficient in professional software such as Photoshop, Illustrator, After
+Effects, Premiere Pro, and DaVinci Resolve, with a strong foundation in color matching, composition design, and
+rhythm control of works, able to create works with strong visual impact. Has won multiple national awards in the
+National Digital Art Competition and the China Good Creative Design Competition.
+4. Through internship experience in the design field and top gaming companies, not only have I accumulated
+rich practical experience, but I have also developed excellent teamwork spirit and communication skills. I have
+experience as a game development PM and can efficiently collaborate in a diverse team environment to jointly
+promote the smooth progress of projects.
+5. In terms of academic research, I am passionate about computer graphics, AIGC, and game design, and have
+published one EI paper, one SCD paper, and one SCI Zone 3 paper in related fields.
+腾讯 天美工作室 Tencent
+ Game development management
+2025.03-Now
+莉莉丝游戏 Lilith Games
+ Game release project managemen
+2024.10-2025.03
+Internship
+1. Responsible for the full process management of the UE5 PC open world engine development project, developi
+ng project plans, tracking progress, coordinating resources, and ensuring timely and high-
+quality delivery of the project.
+2. Responsible for the client quality and related work of the new gameplay of Yuanmeng Star Open World.
+3. Responsible for the art development of UE5's ongoing action games.
+4.Responsible for researching cutting-
+edge AIGC integrated gaming projects, including PCG modeling, generative textures, spatial intelligence, etc.
+5. Communicate closely with planning, programming, art, and other teams to clarify requirements, develop tech
+nical solutions, and drive project progress.
+1. Responsible for coordinating and assisting the marketing and distribution strategies of all game products in C
+hina, ensuring a unified and efficient brand image.
+2. Responsible for managing the planning and production of game promotional materials, including but not limi
+ted to videos, graphic design, etc., to meet the needs of different channels and platforms.
+
+--- PAGE 2 ---
+分众游戏 Fen Zhong Games
+ Technical Art
+2023.05-2023.08
+Infosys
+ Illustrator
+2021.06-2021.09
+3. Work closely with the project team to ensure high consistency between promotional materials and game cont
+ent, and enhance user experience.
+4. Monitor and optimize the distribution process, adjust market promotion strategies in a timely manner through 
+data analysis, and enhance market competitiveness.
+5. Coordinate cross departmental resources, efficiently promote the execution of publicity projects, and ensure th
+e timely completion of high-quality promotional material production.
+6. Regularly evaluate the effectiveness of promotion, collect market feedback, and provide decision support for p
+roduct optimization and subsequent promotion.
+7. Manage and train the publicity team, enhance the team's professional skills and collaboration efficiency, and b
+uild an efficient working atmosphere.
+8. Explore and innovate promotional channels and methods, expand brand influence, enhance user stickiness a
+nd market share.
+1. Work closely with art designers and program developers to design and implement rendering solutions, accura
+tely achieve visual effects in art, and effectively solve the needs and technical difficulties encountered in various 
+stages of art development.
+2. Establish and continuously optimize the workflow and standardized development of art resources, providing s
+trong technical support for the team; Design and implement management standards for art resources to ensure 
+strict implementation of engine standards and improve overall team work efficiency.
+3. Conduct in-
+depth optimization of the scene rendering scheme, improve the overall performance of the software through tec
+hnical means, and ensure the smooth operation of the game or application.
+4. Work closely with the art team and engine programmers to address various issues that may arise during the d
+aily use of the tool engine, ensuring a smooth development process.
+5. Actively participate in the development of the Unity project, focusing on optimizing rendering pipelines, terrai
+n editing, adjusting lighting effects, and contributing professional expertise to the success of the project.
+1. Responsible for participating in and creating original picture book illustrations;
+2. Responsible for taking over wire drawing, coloring, and post production;
+3. Produce complete original picture book designs and derivative products such as IPs; Cultural and Creative
+Design
+Shanghai University of Engineering and Technology
+ Master
+Digital Media（Game Design）
+2023-2026
+Education
+1. Received the Graduate Academic Scholarship in 2023 and the Graduate Academic Scholarship in 2024
+2. Major courses: Game Engine Research, Game Scene Design, Game Graphics Technology Research, Advanced
+Animation and Image Design Research, VR Game Research, etc
+3. Won several national and provincial first prizes in a design competitionGPA： Top 10% of professionals
+4. My research direction is computer graphics, AIGC combined with game design, and I have also published one
+EI paper, one SCD paper, and one SCI Zone 3 paper as the first author during my school years (under revision)
+
+--- PAGE 3 ---
+Shanghai JianQiao University
+ Bachelor
+ Digital Media Art
+2019-2023
+1. Received the 2020-2021 Shanghai Jianqiao University Scholarship and the 2021-2022 Shanghai Jianqiao
+University Scholarship.
+2. Major courses: 3D Animation and Design, Computer 3D Animation Production, Computer Image Design, Game
+Illustration, Business Illustration.
+3. Graduation project awarded as excellent in Shanghai
+GPA： Top 10% of professionals
+2025.03-Now
+2024.10-2024.12
+2023.05-2023.08
+Project List
+《元梦之星开放大世界》Yuanmeng Star Open World
+ R&D project management
+1. An immersive open world survival exploration game based on the "Yuanmeng Star" IP, integrating core
+gameplay such as interstellar exploration, pet capture, resource collection, and social collaboration, to build a
+seamless metaverse ecosystem with multiple scenes.
+2. Quality inspection and process control: Develop client module testing standards: Design test cases for core
+gameplay such as loading in big world scenarios, synchronizing pet battles, and resource collection and
+interaction; Establish a defect attribution library: classify and analyze bugs by module (rendering/physics/AI),
+generate visual reports to drive priority repairs.
+3. Technical difficulties tackling: Performance optimization: Leading the big world streaming loading solution,
+balancing memory usage and scene loading speed; Art bug handling: Coordinate art and TA teams to solve
+problems such as abnormal rendering of special effects materials and terrain material penetration;
+4. Collaboration and risk management; Organize weekly progress synchronization meetings for different
+modules of the client (engine, combat, build, PVP, etc.) to align related research and development matters.
+《剑与远征：启程》AFK：J
+ Art project management
+Content:
+1. Participated in the production and management of art assets for the Chinese distribution of "Sword and
+Expedition: Departure", which was nominated for TGA's Best Mobile Game of the Year.
+Achievement:
+As a PM, I participated in the promotion decision-making and script planning for the release of the game in
+China, followed up on the progress of the video and graphic materials for promotion, and effectively
+communicated with the production team's teachers and UA. Follow up and produce 500+sets of video materials
+and 100+sets of flat banner materials.
+“数禾”数字孪生项目开发 Development of the "Shuhe" digital twin project
+ Technical Art
+Content:
+The "Shuhe" digital twin project is an advanced visualization solution tailored specifically for Shuhe Company's
+lending business, built on Unity, a leading real-time 3D engine. The project aims to transform complex loan data
+processes into intuitive, dynamic, and easily understandable digital twin models through stylized rendering
+techniques. Users can use dedicated mobile applications (APPs) to query, monitor, and optimize various aspects
+of lending business in real-time anytime, anywhere, achieving transparent and intelligent management of
+business processes.
+Achievement:
+Directly involved in the production of U3D projects, serving as a technical artist, responsible for integrating and
+modifying art resources, editing maps, writing shaders, improving rendering effects, optimizing rendering
+
+--- PAGE 4 ---
+processes and art resources, handing over to the programming department, acting as a technical consultant,
+solving and modifying technical problems and new requirements of the client.
