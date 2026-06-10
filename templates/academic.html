@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='inner-pages.css') }}?v=1.0">
 <style>
     /* --- 桌面端基础样式 --- */
     .pub-item {
@@ -245,10 +246,28 @@
 
 </section>
 
-<section class="publications">
+<section class="publications" id="publications">
     <h2 style="border-bottom: 2px solid #2c3e50; padding-bottom: 0.5rem; margin-bottom: 1.5rem;">📝 Publications</h2>
 
     <div class="publication-list">
+
+        <div class="pub-item">
+            <div class="pub-thumbnail">
+                <img src="{{ url_for('static', filename='unweaving_machine_scroll.png') }}" alt="Unweaving the Machine Scroll Thumbnail">
+            </div>
+            <div class="pub-content">
+                <div class="pub-title">
+                    Unweaving the Machine Scroll: A Participatory World-Model Artwork for Inspecting Historical Uncertainty in Qingming Shanghe Tu
+                    <span class="pub-status status-review">Under Review</span>
+                </div>
+                <div class="pub-authors">
+                    <strong>Jie Hu</strong>, Zhaoli Jiang, Yingfang Zhang
+                </div>
+                <div class="pub-venue">
+                    ACM SIGGRAPH Asia 2026 Art Papers.
+                </div>
+            </div>
+        </div>
 
          <div class="pub-item">
             <div class="pub-thumbnail">
@@ -345,10 +364,10 @@
                     <span class="pub-status status-review">Under Review</span>
                 </div>
                 <div class="pub-authors">
-                    <strong>Jie Hu</strong>, Zhaoli fixedJiang, Yingfang Zhang <em></em>
+                    <strong>Jie Hu</strong>, Zhaoli Jiang, Yingfang Zhang <em></em>
                 </div>
                 <div class="pub-venue">
-                    Packaging Engineering (《包装工程》) 北大核心.
+                    Journal of Graphics (《图学学报》) 北大核心.
                 </div>
                 <div class="pub-links">
                     <a href="#">[PDF]</a> <a href="#">[Video]</a>
@@ -384,16 +403,17 @@
             <div class="pub-content">
                 <div class="pub-title">
                     Digital Regeneration of Historical Buildings Using UAV Photogrammetry and 3D Gaussian Splatting for Metaverse Environments
-                     <span class="pub-status status-accepted">Accepted</span>
+                     <span class="pub-status status-published">Published</span>
                 </div>
                 <div class="pub-authors">
                     <strong>Jie Hu</strong>, Zhaoli Jiang, Yingfang Zhang <em></em>
                 </div>
                 <div class="pub-venue">
-                    npj heritage science.<strong>(Natrue npj系列)</strong> 中科院一区Top.
+                    npj Heritage Science. <strong>(Nature npj Series)</strong> 中科院一区Top.
                 </div>
                 <div class="pub-links">
-                    <a href="#">[PDF]</a> <a href="#">[Video]</a>
+                    <a href="https://www.nature.com/articles/s40494-026-02649-7.pdf" target="_blank">[PDF]</a>
+                    <a href="https://doi.org/10.1038/s40494-026-02649-7" target="_blank">[DOI]</a>
                 </div>
             </div>
         </div>

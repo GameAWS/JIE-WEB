@@ -23,6 +23,33 @@ nav {
     justify-content: space-between;
     align-items: center;
 }
+.logo {
+    position: relative;
+    color: #ffffff;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 2rem;
+    font-weight: 400;
+    letter-spacing: -0.055em;
+    line-height: 1;
+}
+.logo span {
+    font-weight: 600;
+}
+.logo em {
+    color: #e38b73;
+    font-weight: 400;
+}
+.logo::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: -0.38rem;
+    width: 42%;
+    height: 1px;
+    background: #e38b73;
+    transform: rotate(-3deg);
+    transform-origin: right center;
+}
 .nav-links {
     list-style: none;
     display: flex;

@@ -1,250 +1,187 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<style>
-    /* 新增 News 模块的样式 */
-    .news-list {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-    }
+<link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}?v=1.0">
 
-    .news-item {
-        display: flex;
-        align-items: baseline;
-        gap: 1.5rem;
-        line-height: 1.6;
-    }
-
-    .news-date {
-        flex-shrink: 0;
-        width: 110px;
-        font-weight: bold;
-        color: #2980b9;
-        font-size: 0.95rem;
-    }
-
-    .news-content {
-        flex-grow: 1;
-        color: #444;
-        font-size: 1rem;
-    }
-
-    /* 用于隐藏多余新闻的类 */
-    .news-hidden {
-        display: none;
-    }
-
-    .show-more-btn {
-        background: none;
-        border: none;
-        color: #7f8c8d;
-        cursor: pointer;
-        font-weight: bold;
-        padding: 0;
-        font-size: 0.95rem;
-        margin-top: 1rem;
-        text-decoration: underline;
-        transition: color 0.2s;
-    }
-
-    .show-more-btn:hover {
-        color: #2c3e50;
-    }
-
-    /* Hero 区域按钮样式 */
-    .hero-links {
-        display: flex;
-        gap: 1rem;
-        flex-wrap: wrap;
-    }
-
-    .hero-links .btn {
-        flex: 1;
-        min-width: 140px;
-        text-align: center;
-        padding: 0.8rem 1.5rem;
-        border-radius: 6px;
-        text-decoration: none;
-        font-weight: bold;
-        box-sizing: border-box; /* 确保 padding 不会撑破宽度 */
-        transition: transform 0.2s, box-shadow 0.2s; /* 添加一点鼠标悬浮的动画效果 */
-    }
-
-    .hero-links .btn:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
-
-    .btn-primary {
-        background-color: #2980b9;
-        color: white;
-    }
-
-    .btn-secondary {
-        background-color: #ecf0f1;
-        color: #2c3e50;
-    }
-
-    /* 手机端响应式适配：当屏幕小于 600px 时，按钮强制上下排列 */
-    @media (max-width: 600px) {
-        .hero-links {
-            flex-direction: column; /* 竖向排列 */
-            width: 100%;
-        }
-        .hero-links .btn {
-            width: 100%; /* 按钮宽度撑满屏幕 */
-        }
-    }
-
-    /* 手机端响应式适配 */
-    @media (max-width: 600px) {
-        .news-item {
-            flex-direction: column;
-            gap: 0.2rem;
-        }
-        .news-date {
-            width: auto;
-            font-size: 0.9rem;
-        }
-    }
-</style>
-
-<section class="hero">
-    <div class="hero-container" style="display: flex; flex-wrap: wrap; gap: 3rem; align-items: center; justify-content: space-between;">
-
-        <div class="hero-text" style="flex: 1; min-width: 300px;">
-            <h2 style="font-size: 2.5rem; color: #2c3e50; margin-bottom: 0.5rem;">Hi, I'm Jie Hu | 胡捷</h2>
-            <p class="hero-subtitle" style="font-size: 1.2rem; color: #555; margin-bottom: 1.5rem;">A passionate <strong>Game Designer</strong>, <strong>Technical Artist</strong>, and experienced <strong>Project Manager</strong> based in Shanghai.</p>
-
-            <div class="research-interests" style="margin-bottom: 1.5rem;">
-                <h3 style="color: #2c3e50; font-size: 1.2rem; margin-bottom: 0.5rem;">🔬 Research & Expertise</h3>
-                <p style="color: #7f8c8d; font-weight: 500;">
-                    Game Design | Computer Graphics (CG) | AI & AIGC | Project Management
-                </p>
-            </div>
-
-            <div class="hero-intro" style="font-size: 1.05rem; line-height: 1.7; color: #444; margin-bottom: 2rem;">
-                <p style="margin-bottom: 1rem;">
-                    I am a Master's student in <strong>Digital Media (Game Design)</strong> at <strong>Shanghai University of Engineering Science</strong>, advised by Prof. Yingfang Zhang . Currently, my research interests mainly focus on <strong>Generative AI, Human-Computer Interaction (HCI), and Computer Graphics</strong> (exploring ways to achieve scalable visual narratives and 3D reconstruction like 3DGS). I am also deeply investigating the intersection of cultural heritage and game development now.
-                </p>
-                <p style="margin-bottom: 1rem;">
-                    Previously, I received my bachelor's degree in <strong>Digital Media Art</strong> from <strong>Shanghai Jian Qiao University</strong> 😘, where I ranked in the Top 10% and won the Outstanding Graduation Thesis/Design Award for my 3D environment project. I have a broad and extensive interest in automated creative workflows and neuro-symbolic systems. I have also gained rich industry experience interning and working as a Technical Artist/PM at top-tier gaming companies including <strong>NetEase, Tencent (TiMi Studio), Papergames, and Lilith Games</strong>.
-                </p>
-                <p style="font-weight: bold; color: #2c3e50;">
-                    I welcome exploration, creating immersive worlds, and pushing technical boundaries! 🎮✨🚀
-                </p>
-            </div>
-
-            <div class="hero-links">
-    <a href="mailto:122089111@qq.com" class="btn btn-primary">Email Me</a>
-    <a href="#" class="btn btn-secondary">Download Resume</a>
-</div>
+<section class="home-hero">
+    <div class="hero-copy">
+        <p class="eyebrow">Digital artist · researcher · technical artist</p>
+        <h2>Building worlds between <em>art</em>, technology, and cultural memory.</h2>
+        <p class="hero-lead">
+            Hi, I am <strong>Jie Hu | 胡捷</strong>. My work explores generative AI, computer graphics,
+            interactive storytelling, and digital heritage through research and playable experiences.
+        </p>
+        <div class="hero-actions">
+            <a class="art-button art-button-dark" href="{{ url_for('academic') }}">Explore research</a>
+            <a class="art-button art-button-light" href="{{ url_for('portfolio') }}">View selected works</a>
+            <a class="text-link" href="https://scholar.google.com/citations?user=OY2L2fIAAAAJ&hl=zh-CN" target="_blank" rel="noopener">Google Scholar ↗</a>
+            <a class="text-link" href="{{ url_for('static', filename='Jie_Hu_CV.pdf') }}" target="_blank">CV ↗</a>
+            <a class="text-link" href="mailto:122089111@qq.com">122089111@qq.com</a>
         </div>
-
-        <div class="hero-image-container" style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-width: 250px;">
-            <img src="{{ url_for('static', filename='me.jpg') }}" alt="Jie Hu Profile Picture" class="hero-avatar" style="width: 220px; height: 220px; object-fit: cover; border-radius: 50%; box-shadow: 0 8px 16px rgba(0,0,0,0.1); border: 4px solid #fff;">
-
-            <div class="contact-info" style="margin-top: 1.5rem; text-align: center; background: #f8f9fa; padding: 0.8rem 1.5rem; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
-                <p style="margin: 0; color: #7f8c8d; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px;">📬 Contact Me</p>
-                <a href="mailto:122089111@qq.com" style="color: #2980b9; text-decoration: none; font-weight: bold; font-size: 1.1rem; transition: color 0.2s;">122089111@qq.com</a>
-            </div>
-        </div>
-
-    </div>
-</section>
-
-<section class="news" style="margin-top: 4rem;">
-    <h3 style="border-bottom: 2px solid #2c3e50; padding-bottom: 0.5rem; margin-bottom: 1.5rem; color: #2c3e50;">📰 News</h3>
-
-    <div class="news-list">
-        <div class="news-item">
-            <div class="news-date">May 2026</div>
-            <div class="news-content">Begin serving as a reviewer for the <strong> UIST 2026 </strong> conference! </div>
-        </div>
-    <div class="news-list">
-        <div class="news-item">
-            <div class="news-date">Feb 2026</div>
-            <div class="news-content">Begin serving as a reviewer for the <strong> ICMR 2026 </strong> conference! </div>
-        </div>
-        <div class="news-item">
-            <div class="news-date">Dec 2025</div>
-            <div class="news-content">Started a new position as a <strong>Technical Artist</strong> at <strong>NetEase Games</strong>!</div>
-        </div>
-        <div class="news-item">
-            <div class="news-date">Sep 2025</div>
-            <div class="news-content">Joined <strong>Papergames (叠纸游戏)</strong> as an Art Project Manager for <em>Infinity Nikki (无限暖暖)</em>.</div>
-        </div>
-
-        <div class="news-item news-hidden">
-            <div class="news-date">Mar 2025</div>
-            <div class="news-content">Started working as R&D Project Manager (PPM) & TA at <strong>Tencent TiMi Studio</strong> on <em>DreamStar (元梦之星)</em>.</div>
-        </div>
-        <div class="news-item news-hidden">
-            <div class="news-date">Oct 2024</div>
-            <div class="news-content">Started as Marketing & Publishing Project Manager at <strong>Lilith Games</strong> in Shanghai.</div>
+        <div class="focus-line">
+            <span>Generative AI</span><span>HCI</span><span>Computer Graphics</span><span>Game Design</span>
         </div>
     </div>
 
-    <button id="show-more-btn" class="show-more-btn" onclick="toggleNews()">Show more</button>
+    <div class="hero-portrait">
+        <div class="portrait-wash"></div>
+        <div class="portrait-orbit"></div>
+        <img src="{{ url_for('static', filename='jie_hu_portrait_transparent.png') }}" alt="Portrait of Jie Hu">
+        <div class="portrait-note">
+            <span>Based in Shanghai</span>
+            <strong>Open to research collaboration</strong>
+        </div>
+        <div class="visit-counter" id="visit-counter" aria-live="polite">
+            <span class="visit-dot"></span>
+            <span>Homepage visits</span>
+            <strong id="visit-count">—</strong>
+        </div>
+    </div>
 </section>
 
-<section class="skills" style="margin-top: 4rem; margin-bottom: 3rem;">
-    <h3 style="border-bottom: 2px solid #2c3e50; padding-bottom: 0.5rem; margin-bottom: 1.5rem; color: #2c3e50;">💡 Core Competencies</h3>
-    <div class="skills-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem;">
-        <div class="skill-category">
-            <h4 style="color: #34495e; margin-bottom: 0.8rem;">Technical Art & Engine</h4>
-            <ul style="color: #555; line-height: 1.6; padding-left: 1.2rem;">
-                <li>Unreal Engine 5 / Unity</li>
-                <li>Shader Dev (GLSL/HLSL)</li>
-                <li>Procedural Modeling</li>
-                <li>C# / C++ Basics</li>
-            </ul>
+<section class="home-section showreel-section">
+    <div class="section-heading">
+        <div>
+            <p class="eyebrow">Moving image / 01</p>
+            <h2>Featured moving work</h2>
         </div>
-        <div class="skill-category">
-            <h4 style="color: #34495e; margin-bottom: 0.8rem;">AIGC & Innovation</h4>
-            <ul style="color: #555; line-height: 1.6; padding-left: 1.2rem;">
-                <li>ComfyUI Workflows</li>
-                <li>Diffusion Models (LoRA/ControlNet)</li>
-                <li>AI Agent Dev</li>
-            </ul>
+        <p>Research becomes more legible when it can be entered, played, and experienced.</p>
+    </div>
+
+    <div class="showreel-grid">
+        <article class="featured-video">
+            <video controls preload="metadata" poster="{{ url_for('static', filename='unweaving_machine_scroll.png') }}">
+                <source src="{{ url_for('static', filename='unweaving_machine_scroll.mp4') }}" type="video/mp4">
+                Your browser does not support embedded video.
+            </video>
+            <div class="video-caption">
+                <div class="video-title-row">
+                    <p class="work-index">01 / Participatory world-model artwork</p>
+                    <h3>Unweaving the Machine Scroll</h3>
+                </div>
+                <span>SIGGRAPH Asia 2026 Art Papers · Under Review</span>
+                <p class="video-summary">
+                    A participatory artwork that transforms <em>Qingming Shanghe Tu</em> into an
+                    inspectable machine-generated world. Visitors move between a physical scroll,
+                    speculative VR scenes, and an annotation interface to distinguish historical
+                    evidence from inferred continuity and algorithmic imagination.
+                </p>
+                <div class="video-tags">
+                    <span>World Models</span><span>3D Gaussian Splatting</span><span>Digital Heritage</span>
+                </div>
+            </div>
+        </article>
+
+        <div class="video-links">
+            <article class="inline-video-card">
+                <video controls preload="metadata" poster="{{ url_for('static', filename='palimpsest_maqiao.jpg') }}">
+                    <source src="{{ url_for('static', filename='palimpsest_maqiao_tvcg.mp4') }}" type="video/mp4">
+                    Your browser does not support embedded video.
+                </video>
+                <div>
+                    <small>Immersive VR visual analytics · TVCG · Under Review</small>
+                    <strong>Palimpsest of Maqiao</strong>
+                </div>
+            </article>
+            <a class="video-link-card" href="https://www.bilibili.com/video/BV1XtyNByEWj/" target="_blank">
+                <img src="{{ url_for('static', filename='maqiao_game.jpg') }}" alt="Maqiao Culture Game">
+                <span class="play-mark">Play</span>
+                <div><small>Adventure puzzle game</small><strong>Maqiao Cultural Journey</strong></div>
+            </a>
+            <a class="video-link-card" href="https://www.bilibili.com/video/BV1Ls4y1G7gX/" target="_blank">
+                <img src="{{ url_for('static', filename='akls.jpg') }}" alt="Lost Ruins Akrosa">
+                <span class="play-mark">Play</span>
+                <div><small>3D environment design</small><strong>Lost Ruins – Akrosa</strong></div>
+            </a>
         </div>
-        <div class="skill-category">
-            <h4 style="color: #34495e; margin-bottom: 0.8rem;">Management & Publishing</h4>
-            <ul style="color: #555; line-height: 1.6; padding-left: 1.2rem;">
-                <li>Marketing Strategy (China Region)</li>
-                <li>Cross-functional Leadership</li>
-                <li>Agile / TAPD</li>
-                <li>Data-Driven Decision Making</li>
-            </ul>
+    </div>
+</section>
+
+<section class="home-section">
+    <div class="section-heading">
+        <div>
+            <p class="eyebrow">Research / 02</p>
+            <h2>Selected publications</h2>
         </div>
-         <div class="skill-category">
-            <h4 style="color: #34495e; margin-bottom: 0.8rem;">Art & Design Tools</h4>
-            <ul style="color: #555; line-height: 1.6; padding-left: 1.2rem;">
-                <li>3ds Max / Maya / Blender</li>
-                <li>Substance Painter (PBR)</li>
-                <li>Adobe Creative Suite</li>
-            </ul>
-        </div>
+        <a class="section-link" href="{{ url_for('academic') }}#publications">All publications →</a>
+    </div>
+
+    <div class="featured-publications">
+        <article class="publication-card publication-card-wide">
+            <img src="{{ url_for('static', filename='npj_figure_1.jpg') }}" alt="Aerial view of the historical building site">
+            <div class="publication-copy">
+                <span class="paper-state state-published">Published</span>
+                <p class="paper-venue">npj Heritage Science · 2026</p>
+                <h3>Digital Regeneration of Historical Buildings Using UAV Photogrammetry and 3D Gaussian Splatting</h3>
+                <p><strong>Jie Hu</strong>, Zhaoli Jiang, Yingfang Zhang</p>
+                <div class="paper-links">
+                    <a href="https://doi.org/10.1038/s40494-026-02649-7" target="_blank">DOI ↗</a>
+                    <a href="https://www.nature.com/articles/s40494-026-02649-7.pdf" target="_blank">PDF ↗</a>
+                </div>
+            </div>
+        </article>
+
+        <article class="publication-card">
+            <img src="{{ url_for('static', filename='unweaving_machine_scroll.png') }}" alt="Unweaving the Machine Scroll">
+            <div class="publication-copy">
+                <span class="paper-state state-review">Under Review</span>
+                <p class="paper-venue">SIGGRAPH Asia 2026 Art Papers</p>
+                <h3>Unweaving the Machine Scroll</h3>
+                <p><strong>Jie Hu</strong>, Zhaoli Jiang, Yingfang Zhang</p>
+            </div>
+        </article>
+
+        <article class="publication-card">
+            <img src="{{ url_for('static', filename='dualdraft.jpg') }}" alt="DualDraft">
+            <div class="publication-copy">
+                <span class="paper-state state-review">Under Review</span>
+                <p class="paper-venue">UIST 2026</p>
+                <h3>DualDraft: Consistent Visual Narratives via a Dual-Mode Co-Creative Agent</h3>
+                <p><strong>Jie Hu</strong>, Zhaoli Jiang, Yingfang Zhang</p>
+            </div>
+        </article>
+
+        <article class="publication-card">
+            <img src="{{ url_for('static', filename='pixel_to_mesh.jpg') }}" alt="From Pixel to Mesh">
+            <div class="publication-copy">
+                <span class="paper-state state-accepted">Accepted</span>
+                <p class="paper-venue">AHFE 2026</p>
+                <h3>From Pixel to Mesh: A Semantically-Guided 2D-to-3D Generative Pipeline</h3>
+                <p><strong>Jie Hu</strong> et al.</p>
+            </div>
+        </article>
+    </div>
+</section>
+
+<section class="home-section news-section">
+    <div class="section-heading compact-heading">
+        <div><p class="eyebrow">Notes / 03</p><h2>Recent news</h2></div>
+    </div>
+    <div class="home-news">
+        <div><time>Jun 2026</time><p>Submitted <strong>Unweaving the Machine Scroll</strong> to SIGGRAPH Asia 2026 Art Papers.</p></div>
+        <div><time>May 2026</time><p>Started serving as a reviewer for <strong>UIST 2026</strong>.</p></div>
+        <div><time>2026</time><p>Our historical-building regeneration paper was published in <strong>npj Heritage Science</strong>.</p></div>
+        <div><time>Dec 2025</time><p>Joined <strong>NetEase Games</strong> as a Technical Artist.</p></div>
     </div>
 </section>
 
 <script>
-    function toggleNews() {
-        // 获取所有带有 news-hidden 类的元素
-        const hiddenItems = document.querySelectorAll('.news-hidden');
-        const btn = document.getElementById('show-more-btn');
+    (async function updateVisitCount() {
+        const counter = document.getElementById('visit-counter');
+        const value = document.getElementById('visit-count');
+        const baseUrl = 'https://api.counterapi.dev/v1/jie-hu-portfolio/homepage';
+        const shouldIncrement = !sessionStorage.getItem('jie-hu-homepage-counted');
 
-        // 判断当前是展开还是折叠状态
-        let isShowing = btn.innerText === 'Show less';
-
-        hiddenItems.forEach(item => {
-            // 如果正在展示，则隐藏它；如果隐藏了，则改为 flex 布局显示
-            item.style.display = isShowing ? 'none' : 'flex';
-        });
-
-        // 切换按钮文字
-        btn.innerText = isShowing ? 'Show more' : 'Show less';
-    }
+        try {
+            const response = await fetch(shouldIncrement ? `${baseUrl}/up` : baseUrl);
+            if (!response.ok) throw new Error('Counter unavailable');
+            const data = await response.json();
+            value.textContent = Number(data.count ?? data.value ?? 0).toLocaleString();
+            if (shouldIncrement) sessionStorage.setItem('jie-hu-homepage-counted', 'true');
+            counter.classList.add('is-ready');
+        } catch (error) {
+            counter.hidden = true;
+        }
+    })();
 </script>
 {% endblock %}
