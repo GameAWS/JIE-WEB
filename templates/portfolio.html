@@ -111,6 +111,10 @@
         object-fit: contain; /* 保证 Logo 比例正确，不被拉伸 */
     }
 
+    .resume-logo.iplay-logo {
+        width: 90px;
+    }
+
     /* 文字内容容器 */
     .resume-content {
         flex-grow: 1;
@@ -156,6 +160,10 @@
             width: 50px;
             height: 50px;
         }
+
+        .resume-logo.iplay-logo {
+            width: 68px;
+        }
     }
 </style>
 
@@ -165,7 +173,7 @@
     <div class="experience-list">
 
         <div class="resume-card">
-            <div class="resume-logo">
+            <div class="resume-logo iplay-logo">
                 <img src="{{ url_for('static', filename='iplay_logo.png') }}" alt="iPlay Game Logo">
             </div>
             <div class="resume-content">

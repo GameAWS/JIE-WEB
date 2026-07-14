@@ -146,6 +146,12 @@
         max-height: 82%;
     }
 
+    .education-logo .sues-logo {
+        max-width: 92%;
+        max-height: 92%;
+        transform: scaleY(1.08);
+    }
+
     .education-content {
         min-width: 0;
     }
@@ -232,7 +238,7 @@
         </div>
 
         <div class="education-item">
-            <div class="education-logo"><img src="{{ url_for('static', filename='sues_logo.png') }}" alt="Shanghai University of Engineering Science logo"></div>
+            <div class="education-logo"><img class="sues-logo" src="{{ url_for('static', filename='sues_logo.png') }}" alt="Shanghai University of Engineering Science logo"></div>
             <div class="education-content">
                 <h3 style="color: #2c3e50;">Master of Arts in Digital Media (Game Design)</h3>
                 <p class="date" style="color: #7f8c8d; font-family: 'Georgia', serif; font-style: italic;">Sep 2023 - Jun 2026 | Shanghai University of Engineering Science</p>
