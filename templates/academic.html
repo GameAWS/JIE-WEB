@@ -110,6 +110,54 @@
         box-shadow: 0 4px 8px rgba(251, 114, 153, 0.3);
     }
 
+    .education-list {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .education-item {
+        display: flex;
+        gap: 1rem;
+        align-items: flex-start;
+        padding: 1rem;
+        background: rgba(255, 255, 255, 0.68);
+        border: 1px solid rgba(44, 62, 80, 0.08);
+        border-radius: 10px;
+    }
+
+    .education-logo {
+        flex: 0 0 62px;
+        width: 62px;
+        height: 62px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .education-logo img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+    }
+
+    .education-content {
+        min-width: 0;
+    }
+
+    .education-content h3,
+    .education-content p {
+        margin-top: 0;
+    }
+
+    .education-content h3 {
+        margin-bottom: 0.35rem;
+    }
+
+    .education-content .date {
+        margin-bottom: 0.6rem;
+    }
+
     /* --- 🌟 移动端响应式核心 🌟 --- */
     @media (max-width: 768px) {
 
@@ -144,32 +192,57 @@
             font-size: 1rem !important;
             line-height: 1.5;
         }
+
+        .education-item {
+            gap: 0.75rem;
+            padding: 0.8rem;
+        }
+
+        .education-logo {
+            flex-basis: 46px;
+            width: 46px;
+            height: 46px;
+        }
     }
 </style>
 
 <section class="education" style="margin-bottom: 3rem;">
     <h2 style="border-bottom: 2px solid #2c3e50; padding-bottom: 0.5rem; margin-bottom: 1.5rem;">🎓 Education</h2>
-    <div class="resume-item" style="margin-bottom: 1.5rem;">
-        <h3 style="color: #2c3e50;">Ph.D. in Computer Science and Technology</h3>
-        <p class="date" style="color: #7f8c8d; font-family: 'Georgia', serif; font-style: italic;">Sep 2026 – Jun 2030 | Beijing Institute of Technology</p>
-    </div>
+    <div class="education-list">
+        <div class="education-item">
+            <div class="education-logo"><img src="{{ url_for('static', filename='bit_logo.png') }}" alt="Beijing Institute of Technology logo"></div>
+            <div class="education-content">
+                <h3 style="color: #2c3e50;">Ph.D. in Computer Science and Technology</h3>
+                <p class="date" style="color: #7f8c8d; font-family: 'Georgia', serif; font-style: italic;">Sep 2026 – Jun 2030 | Beijing Institute of Technology</p>
+            </div>
+        </div>
 
-    <div class="resume-item" style="margin-bottom: 1.5rem;">
-        <h3 style="color: #2c3e50;">Research Exchange Student, Digital Art Laboratory</h3>
-        <p class="date" style="color: #7f8c8d; font-family: 'Georgia', serif; font-style: italic;">Dec 2025 – May 2026 | Fudan University</p>
-        <p> Engaged in advanced research on digital media art and interactive design within a top-tier academic laboratory setting.</p>
-    </div>
+        <div class="education-item">
+            <div class="education-logo"><img src="{{ url_for('static', filename='fudan_logo.png') }}" alt="Fudan University logo"></div>
+            <div class="education-content">
+                <h3 style="color: #2c3e50;">Research Exchange Student, Digital Art Laboratory</h3>
+                <p class="date" style="color: #7f8c8d; font-family: 'Georgia', serif; font-style: italic;">Dec 2025 – May 2026 | Fudan University</p>
+                <p>Engaged in advanced research on digital media art and interactive design within a top-tier academic laboratory setting.</p>
+            </div>
+        </div>
 
-    <div class="resume-item" style="margin-bottom: 1.5rem;">
-        <h3 style="color: #2c3e50;">Master of Arts in Digital Media (Game Design)</h3>
-        <p class="date" style="color: #7f8c8d; font-family: 'Georgia', serif; font-style: italic;">Sep 2023 - Jun 2026 | Shanghai University of Engineering Science</p>
-        <p><strong>GPA:</strong> Top 5% (Awarded First and Second-class Academic Scholarships)</p>
-    </div>
+        <div class="education-item">
+            <div class="education-logo"><img src="{{ url_for('static', filename='sues_logo.png') }}" alt="Shanghai University of Engineering Science logo"></div>
+            <div class="education-content">
+                <h3 style="color: #2c3e50;">Master of Arts in Digital Media (Game Design)</h3>
+                <p class="date" style="color: #7f8c8d; font-family: 'Georgia', serif; font-style: italic;">Sep 2023 - Jun 2026 | Shanghai University of Engineering Science</p>
+                <p><strong>GPA:</strong> Top 5% (Awarded First and Second-class Academic Scholarships)</p>
+            </div>
+        </div>
 
-    <div class="resume-item">
-        <h3 style="color: #2c3e50;">Bachelor of Arts in Digital Media Art</h3>
-        <p class="date" style="color: #7f8c8d; font-family: 'Georgia', serif; font-style: italic;">Sep 2019 - Jun 2023 | Shanghai Jian Qiao University</p>
-        <p><strong>GPA:</strong> Top 10% (Awarded University Scholarships consecutively)</p>
+        <div class="education-item">
+            <div class="education-logo"><img src="{{ url_for('static', filename='sjqu_logo.png') }}" alt="Shanghai Jian Qiao University logo"></div>
+            <div class="education-content">
+                <h3 style="color: #2c3e50;">Bachelor of Arts in Digital Media Art</h3>
+                <p class="date" style="color: #7f8c8d; font-family: 'Georgia', serif; font-style: italic;">Sep 2019 - Jun 2023 | Shanghai Jian Qiao University</p>
+                <p><strong>GPA:</strong> Top 10% (Awarded University Scholarships consecutively)</p>
+            </div>
+        </div>
     </div>
 </section>
 
@@ -308,7 +381,7 @@
                     <strong>Jie Hu</strong>, Zhaoli Jiang, Yingfang Zhang <em></em>
                 </div>
                 <div class="pub-venue">
-                    Multimedia Systems. SCI CAS Q3.
+                    Multimedia Systems. SCI 中科院三区.
                 </div>
                 <div class="pub-links">
                     <a href="#">[PDF]</a> <a href="#">[Project Page]</a>
