@@ -141,6 +141,11 @@
         object-fit: contain;
     }
 
+    .education-logo .fudan-logo {
+        max-width: 82%;
+        max-height: 82%;
+    }
+
     .education-content {
         min-width: 0;
     }
@@ -218,7 +223,7 @@
         </div>
 
         <div class="education-item">
-            <div class="education-logo"><img src="{{ url_for('static', filename='fudan_logo.png') }}" alt="Fudan University logo"></div>
+            <div class="education-logo"><img class="fudan-logo" src="{{ url_for('static', filename='fudan_logo.png') }}" alt="Fudan University logo"></div>
             <div class="education-content">
                 <h3 style="color: #2c3e50;">Research Exchange Student, Digital Art Laboratory</h3>
                 <p class="date" style="color: #7f8c8d; font-family: 'Georgia', serif; font-style: italic;">Dec 2025 – May 2026 | Fudan University</p>
