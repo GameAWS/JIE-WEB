@@ -12,6 +12,14 @@
         align-items: flex-start;
     }
 
+    .publication-list .pub-item:last-child {
+        border-bottom: 1px solid #e0e0e0;
+    }
+
+    .publication-list .pub-item.pub-rank-last {
+        border-bottom: none;
+    }
+
     .pub-thumbnail {
         flex-shrink: 0;
         width: 160px;
@@ -223,7 +231,7 @@
         <div class="education-item">
             <div class="education-logo"><img src="{{ url_for('static', filename='bit_logo.png') }}" alt="Beijing Institute of Technology logo"></div>
             <div class="education-content">
-                <h3 style="color: #2c3e50;">Ph.D. Candidate in Computer Science and Technology</h3>
+                <h3 style="color: #2c3e50;">Ph.D. student in Computer Science and Technology</h3>
                 <p class="date" style="color: #7f8c8d; font-family: 'Georgia', serif; font-style: italic;">Sep 2026 – Jun 2030 | Beijing Institute of Technology</p>
             </div>
         </div>
@@ -340,7 +348,7 @@
 
     <div class="publication-list">
 
-        <div class="pub-item">
+        <div class="pub-item" style="order: 10;">
             <div class="pub-thumbnail">
                 <img src="{{ url_for('static', filename='unweaving_machine_scroll.png') }}" alt="Unweaving the Machine Scroll Thumbnail">
             </div>
@@ -358,7 +366,7 @@
             </div>
         </div>
 
-         <div class="pub-item">
+         <div class="pub-item" style="order: 9;">
             <div class="pub-thumbnail">
                 <img src="{{ url_for('static', filename='dualdraft.jpg') }}" alt="DualDraft Project Thumbnail">
             </div>
@@ -379,28 +387,29 @@
             </div>
         </div>
 
-        <div class="pub-item">
+        <div class="pub-item" style="order: 2;">
             <div class="pub-thumbnail">
                 <img src="{{ url_for('static', filename='storynode.jpg') }}" alt="StoryNode Thumbnail">
             </div>
             <div class="pub-content">
                 <div class="pub-title">
-                    StoryNode: A Node-Based Visual Orchestration Framework for Automated Comic and Storyboard Generation
+                    StoryNode: a Node-Based Visual Orchestration Framework for Automated Comic and Storyboard Generation
                     <span class="pub-status status-published">Published</span>
                 </div>
                 <div class="pub-authors">
                     <strong>Jie Hu</strong>, Zhaoli Jiang, Yingfang Zhang <em></em>
                 </div>
                 <div class="pub-venue">
-                    Multimedia Systems. SCI 中科院三区.
+                    Multimedia Systems <strong>32, Article 500 (2026)</strong>. SCI 中科院三区.
                 </div>
                 <div class="pub-links">
-                    <a href="#">[PDF]</a> <a href="#">[Project Page]</a>
+                    <a href="{{ url_for('static', filename='s00530-026-02567-5.pdf') }}" target="_blank">[PDF]</a>
+                    <a href="https://doi.org/10.1007/s00530-026-02567-5" target="_blank" rel="noopener">[DOI]</a>
                 </div>
             </div>
         </div>
 
-        <div class="pub-item">
+        <div class="pub-item" style="order: 7;">
             <div class="pub-thumbnail">
                 <img src="{{ url_for('static', filename='komixflow.jpg') }}" alt="KomixFlow Thumbnail">
             </div>
@@ -421,7 +430,7 @@
             </div>
         </div>
 
-        <div class="pub-item">
+        <div class="pub-item" style="order: 11;">
             <div class="pub-thumbnail">
                 <img src="{{ url_for('static', filename='neuro_symbolic.jpg') }}" alt="Neuro-Symbolic System Thumbnail">
             </div>
@@ -442,7 +451,7 @@
             </div>
         </div>
 
-        <div class="pub-item">
+        <div class="pub-item pub-rank-last" style="order: 12;">
             <div class="pub-thumbnail">
                 <img src="{{ url_for('static', filename='maqiao_pottery.jpg') }}" alt="Maqiao Pottery Thumbnail">
             </div>
@@ -464,7 +473,7 @@
             </div>
         </div>
 
-        <div class="pub-item">
+        <div class="pub-item" style="order: 8;">
             <div class="pub-thumbnail">
                 <img src="{{ url_for('static', filename='palimpsest_maqiao.jpg') }}" alt="Palimpsest VR Thumbnail">
             </div>
@@ -485,7 +494,7 @@
             </div>
         </div>
 
-        <div class="pub-item">
+        <div class="pub-item" style="order: 1;">
             <div class="pub-thumbnail">
                 <img src="{{ url_for('static', filename='uav_3dgs.jpg') }}" alt="UAV Photogrammetry Thumbnail">
             </div>
@@ -507,7 +516,7 @@
             </div>
         </div>
 
-        <div class="pub-item">
+        <div class="pub-item" style="order: 3;">
             <div class="pub-thumbnail">
                 <img src="{{ url_for('static', filename='pixel_to_mesh.jpg') }}" alt="Pixel to Mesh Thumbnail">
             </div>
@@ -529,7 +538,7 @@
             </div>
         </div>
 
-        <div class="pub-item">
+        <div class="pub-item" style="order: 4;">
             <div class="pub-thumbnail">
                 <img src="{{ url_for('static', filename='parametric_design.jpg') }}" alt="Parametric Design Thumbnail">
             </div>
@@ -557,7 +566,7 @@
             </div>
         </div>
 
-        <div class="pub-item">
+        <div class="pub-item" style="order: 5;">
             <div class="pub-thumbnail">
                 <img src="{{ url_for('static', filename='miao_totem.jpg') }}" alt="Miao Totem Thumbnail">
             </div>
@@ -586,7 +595,7 @@
         </div>
 
 
-        <div class="pub-item">
+        <div class="pub-item" style="order: 6;">
             <div class="pub-thumbnail">
                 <img src="{{ url_for('static', filename='aigc_game.jpg') }}" alt="AIGC Game Design Thumbnail">
             </div>
