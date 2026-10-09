@@ -1,9 +1,24 @@
 import json
 from urllib.request import Request, urlopen
 
-from flask import Flask, jsonify, render_template, request
+from flask import Flask, Response, jsonify, render_template, request
 
 app = Flask(__name__)
+
+# Set to False to make the site public again.
+MAINTENANCE_MODE = True
+
+
+@app.before_request
+def hide_public_site():
+    if not MAINTENANCE_MODE:
+        return None
+
+    response = Response("Site temporarily unavailable.", status=503, mimetype="text/plain")
+    response.headers["Retry-After"] = "86400"
+    response.headers["X-Robots-Tag"] = "noindex, nofollow, noarchive"
+    response.headers["Cache-Control"] = "no-store"
+    return response
 
 # 首页路由
 @app.route('/')
